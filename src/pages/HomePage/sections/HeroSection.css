@@ -106,6 +106,8 @@
   display: flex;
   align-items: center;
   gap: 0.85rem;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 /* Uncurved Logo Container */
@@ -166,10 +168,10 @@
 .hero-nav-links {
   display: none;
   align-items: center;
-  gap: 2.75rem;
+  gap: clamp(1.25rem, 2.2vw, 2.75rem);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .hero-nav-links {
     display: flex;
   }
@@ -264,6 +266,7 @@
   font-size: 1.15rem;
   cursor: pointer;
   margin-left: 0.75rem;
+  flex-shrink: 0;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -275,7 +278,7 @@
   transform: scale(0.92);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .hero-nav-mobile-btn {
     display: none;
   }
@@ -929,11 +932,52 @@
    ========================================================= */
 @media (max-width: 640px) {
   .hero-nav {
-    padding: 1.25rem 1rem 0.5rem;
+    padding: 1rem 1rem 0.5rem;
+  }
+
+  .hero-nav-left {
+    gap: 0.5rem;
+  }
+
+  .hero-next-box {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+
+  .hero-next-img {
+    height: 28px;
+  }
+
+  .hero-nav-divider {
+    height: 16px;
+    margin: 0 0.15rem;
+    flex-shrink: 0;
+  }
+
+  .hero-nav-brand {
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .hero-nav-wheel {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
   }
 
   .hero-nav-brand-text {
     font-size: 1.15rem;
+    white-space: nowrap;
+  }
+
+  /* Hide the top navbar Register button on mobile to avoid overlapping */
+  .hero-nav-right .island-register-btn {
+    display: none;
+  }
+
+  .hero-nav-mobile-btn {
+    margin-left: 0;
   }
 
   .hero-main-container {

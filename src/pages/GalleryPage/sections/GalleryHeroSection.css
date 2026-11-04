@@ -91,6 +91,8 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .gallery-next-box {
@@ -140,10 +142,10 @@
 .gallery-nav-links {
   display: none;
   align-items: center;
-  gap: 2.25rem;
+  gap: clamp(1.25rem, 2.2vw, 2.25rem);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .gallery-nav-links {
     display: flex;
   }
@@ -223,10 +225,11 @@
   color: #ffffff;
   font-size: 1.25rem;
   cursor: pointer;
+  flex-shrink: 0;
   transition: background 0.2s ease;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .gallery-mobile-btn {
     display: none;
   }
@@ -343,4 +346,58 @@
   background: linear-gradient(180deg, transparent 0%, #030508 100%);
   pointer-events: none;
   z-index: 2;
+}
+
+@media (max-width: 640px) {
+  .gallery-top-nav {
+    margin-bottom: 2rem;
+    padding: 0.25rem 0;
+  }
+
+  .gallery-nav-left {
+    gap: 0.5rem;
+  }
+
+  .gallery-next-box {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+
+  .gallery-next-img {
+    height: 28px;
+  }
+
+  .gallery-nav-divider {
+    height: 16px;
+    margin: 0 0.15rem;
+    flex-shrink: 0;
+  }
+
+  .gallery-nav-brand {
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .gallery-nav-wheel {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+
+  .gallery-nav-brand-text {
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  /* Hide the top navbar Register button on mobile to avoid overlapping */
+  .gallery-register-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .gallery-nav-brand-text {
+    font-size: 0.74rem;
+  }
 }

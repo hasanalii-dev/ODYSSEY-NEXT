@@ -90,6 +90,8 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .app-next-box {
@@ -155,10 +157,10 @@
 .app-nav-links {
   display: none;
   align-items: center;
-  gap: 2.75rem;
+  gap: clamp(1.25rem, 2.2vw, 2.75rem);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .app-nav-links {
     display: flex;
   }
@@ -236,10 +238,11 @@
   color: #ffffff;
   font-size: 1.25rem;
   cursor: pointer;
+  flex-shrink: 0;
   transition: background 0.2s ease;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .app-mobile-btn {
     display: none;
   }
@@ -434,5 +437,59 @@
   background: linear-gradient(180deg, transparent 0%, #030508 100%);
   pointer-events: none;
   z-index: 2;
+}
+
+@media (max-width: 640px) {
+  .app-top-nav {
+    margin-bottom: 2rem;
+    padding: 0.25rem 0;
+  }
+
+  .app-nav-left {
+    gap: 0.5rem;
+  }
+
+  .app-next-box {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+
+  .app-next-img {
+    height: 28px;
+  }
+
+  .app-nav-divider {
+    height: 16px;
+    margin: 0 0.15rem;
+    flex-shrink: 0;
+  }
+
+  .app-nav-brand {
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .app-nav-wheel {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+
+  .app-nav-brand-text {
+    font-size: 1.15rem;
+    white-space: nowrap;
+  }
+
+  /* Hide the top navbar Register button on mobile to avoid overlapping */
+  .app-nav-right .island-register-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .app-nav-brand-text {
+    font-size: 1rem;
+  }
 }
 

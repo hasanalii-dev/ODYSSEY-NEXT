@@ -498,6 +498,16 @@
   will-change: transform, opacity, filter;
 }
 
+/* Strictly remove the sticky dock on mobile screens where cards are already laid out in a list */
+@media (max-width: 768px) {
+  .dock-sticky-anchor,
+  .macos-dock-tray {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
 /* State: Inside #highlights section -> Smooth spring entrance */
 .dock-sticky-anchor.dock-sticky-visible {
   transform: translateY(0);

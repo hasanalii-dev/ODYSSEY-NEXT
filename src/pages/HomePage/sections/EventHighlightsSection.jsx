@@ -140,6 +140,11 @@ export const EventHighlightsSection = () => {
   useEffect(() => {
     const checkDockVisibility = () => {
       if (!sectionRef.current) return;
+      // Dock is strictly desktop-only: mobile (< 769px) has full cards list laid out
+      if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+        setIsDockVisible(false);
+        return;
+      }
       const rect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
