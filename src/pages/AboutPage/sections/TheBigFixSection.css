@@ -1,0 +1,335 @@
+/* =========================================================
+   THE BIG FIX SECTION
+   - Dual Uncurved Vertical Rectangular Parallax Imagery (Aspect Ratio 3:4)
+   - Scrubbed Up and Down in opposite directions on scroll
+   - Dark Frosted Glass Bento Cards with Framer Motion reveals
+   - Balanced Wave Gradient Layer in Background (Amplitude A=34)
+   - Zero 90-Degree Linear Gradients
+   - High-contrast Apple Typography
+   ========================================================= */
+
+.the-big-fix-section {
+  position: relative;
+  padding: clamp(5.5rem, 9vw, 8.5rem) 1.5rem;
+  background-color: #030508;
+  border-bottom: none;
+  overflow: hidden;
+}
+
+/* Balanced Wave Gradient Layer — Feather-masked at top & bottom so ZERO lines appear */
+.big-fix-wave-layer {
+  position: absolute;
+  inset: -12% 0;
+  width: 100%;
+  height: 124%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.95;
+  contain: strict;
+  transform: translateZ(0);
+  will-change: transform;
+  mask-image: linear-gradient(180deg, transparent 0%, black 18%, black 82%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 18%, black 82%, transparent 100%);
+}
+
+.big-fix-wave-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: blur(28px);
+}
+
+/* Atmospheric ambient radial glow */
+.big-fix-ambient-glow {
+  position: absolute;
+  top: 40%;
+  right: 20%;
+  transform: translate(50%, -50%);
+  width: clamp(650px, 75vw, 1200px);
+  height: clamp(500px, 60vh, 850px);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse 60% 60% at 50% 50%,
+    rgba(211, 78, 63, 0.05) 0%,
+    rgba(20, 148, 180, 0.04) 45%,
+    transparent 75%
+  );
+  filter: blur(85px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.the-big-fix-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Section Header --- */
+.the-big-fix-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto clamp(3.5rem, 6vw, 5rem);
+}
+
+.the-big-fix-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.48rem 1.35rem;
+  border-radius: 9999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.05) 45%,
+    rgba(10, 14, 22, 0.72) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-top-color: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 6px 12px -2px rgba(255, 255, 255, 0.09),
+    0 6px 20px -2px rgba(0, 0, 0, 0.55);
+  margin-bottom: 1.5rem;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.the-big-fix-badge-pill:hover {
+  transform: translateY(-1px);
+  border-top-color: rgba(255, 255, 255, 0.55);
+  box-shadow:
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.6),
+    inset 0 8px 16px -2px rgba(255, 255, 255, 0.14),
+    0 8px 24px -2px rgba(0, 0, 0, 0.65);
+}
+
+.the-big-fix-badge-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff !important;
+}
+
+.the-big-fix-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(3.2rem, 6.4vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+  text-transform: uppercase;
+}
+
+.the-big-fix-title-accent {
+  font-style: italic;
+  display: inline-block;
+  padding-right: 0.08em;
+}
+
+.the-big-fix-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+  font-weight: 400;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Content & Visual Grid --- */
+.the-big-fix-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .the-big-fix-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4.5rem;
+  }
+}
+
+/* Text Cards */
+.the-big-fix-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.the-big-fix-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2rem, 3vw, 2.75rem);
+  background: rgba(10, 14, 22, 0.38); /* Transparent Dark Glass */
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(32px) saturate(190%);
+  -webkit-backdrop-filter: blur(32px) saturate(190%);
+  border-radius: 1.5rem;
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.55),
+    0 0 25px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.22);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.the-big-fix-card .card-relative-content {
+  position: relative;
+  z-index: 2;
+}
+
+.the-big-fix-card:hover {
+  transform: translateY(-3px);
+  background: rgba(14, 18, 28, 0.48);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow:
+    0 26px 55px rgba(0, 0, 0, 0.65),
+    0 0 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.the-big-fix-step-tag {
+  display: inline-block;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top-color: rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+}
+
+.the-big-fix-paragraph {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* =========================================================
+   DUAL UNCURVED VERTICAL RECTANGULAR PARALLAX GALLERY
+   Aspect Ratio: 3 / 4 (Vertical, NOT square, NOT 9:16)
+   Scrubbed Up and Down by GSAP ScrollTrigger
+   ========================================================= */
+.the-big-fix-gallery {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 520px;
+}
+
+.big-fix-frame {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: 0 !important; /* UNCURVED STRICT */
+  box-shadow:
+    0 28px 65px rgba(0, 0, 0, 0.9),
+    0 0 30px rgba(0, 0, 0, 0.7);
+  will-change: transform;
+}
+
+.big-fix-frame.frame-primary {
+  width: 65%;
+  max-width: 330px;
+  z-index: 2;
+  transform: translateX(-15%);
+}
+
+.big-fix-frame.frame-secondary {
+  position: absolute;
+  width: 55%;
+  max-width: 280px;
+  right: 5%;
+  top: 15%;
+  z-index: 3;
+}
+
+.big-fix-parallax-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0 !important; /* UNCURVED STRICT */
+  background: #000000;
+}
+
+.big-fix-parallax-img {
+  position: absolute;
+  top: -15%;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  object-fit: cover;
+  border-radius: 0 !important; /* UNCURVED STRICT */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+.big-fix-scrim {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    rgba(3, 5, 8, 0.6) 100%
+  );
+  pointer-events: none;
+  border-radius: 0 !important;
+}
+
+.big-fix-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0 !important; /* UNCURVED STRICT */
+  pointer-events: none;
+  z-index: 4;
+}
+
+.big-fix-caption {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0.85rem;
+  right: 0.85rem;
+  padding: 0.4rem 0.65rem;
+  background: rgba(10, 12, 16, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 0 !important; /* UNCURVED STRICT */
+  z-index: 5;
+}
+
+.big-fix-caption span {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #e2e8f0;
+}
+
+/* Gradient fade mask overlay at bottom of The Big Fix */
+.big-fix-bottom-mask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: clamp(140px, 22vh, 260px);
+  background: linear-gradient(180deg, transparent 0%, rgba(3, 5, 8, 0.65) 50%, #05070A 100%);
+  pointer-events: none;
+  z-index: 6;
+}

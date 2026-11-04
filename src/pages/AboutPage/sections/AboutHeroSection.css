@@ -1,0 +1,573 @@
+/* =========================================================
+   ABOUT HERO SECTION & TOP NAVBAR
+   - Top Navbar (Transparent, sleek, no heavy body)
+   - Links: about, events, gallery, register button
+   - Blue Wave Gradient Background Layer
+   - Uncurved Vertical Rectangular Parallax Imagery (Aspect Ratio 3:4)
+   - Dark Frosted Glass Pills (Zero Solid Colors)
+   - Zero 90-Degree Linear Gradients
+   - High-contrast Apple Typography
+   ========================================================= */
+
+.about-hero-section {
+  position: relative;
+  min-height: 90vh;
+  padding: clamp(8.5rem, 14vw, 11rem) 1.5rem clamp(4rem, 8vw, 6rem);
+  background-color: #030508;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: none;
+}
+
+/* =========================================================
+   TOP NAVBAR (Transparent, no body / capsule container)
+   ========================================================= */
+.about-top-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 1.5rem 1rem;
+  z-index: 50;
+  background: transparent;
+}
+
+@media (min-width: 768px) {
+  .about-top-nav {
+    padding: 2.25rem 3rem 1rem;
+  }
+}
+
+.about-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+/* Uncurved Logo Box */
+.about-next-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 0 !important; /* DONT CURVE LOGOS */
+  background: transparent;
+  border: none;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.about-next-box:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.about-next-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 0 !important; /* DONT CURVE LOGOS */
+  object-fit: contain;
+}
+
+.about-nav-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.18);
+  margin: 0 0.25rem;
+}
+
+.about-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.about-nav-brand:active {
+  transform: scale(0.96);
+}
+
+.about-nav-wheel {
+  width: 26px;
+  height: 26px;
+  border-radius: 0 !important; /* DONT CURVE LOGOS */
+  object-fit: contain;
+}
+
+.about-nav-brand-text {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.45rem;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  line-height: 1;
+}
+
+/* Center Links: about, events, gallery */
+.about-nav-links {
+  display: none;
+  align-items: center;
+  gap: 2.75rem;
+}
+
+@media (min-width: 768px) {
+  .about-nav-links {
+    display: flex;
+  }
+}
+
+.about-nav-link {
+  position: relative;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #94A3B8;
+  text-decoration: none;
+  text-transform: lowercase;
+  padding: 0.35rem 0;
+  transition: color 0.2s ease;
+}
+
+.about-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-nav-link:hover {
+  color: #ffffff;
+}
+
+.about-nav-link:hover::after,
+.about-nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.about-nav-link.active {
+  color: #ffffff;
+}
+
+/* Right Nav: Register Button & Mobile Button */
+.about-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.about-nav-right .island-register-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 1.35rem;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: #000000 !important;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 12px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition:
+    transform 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+  will-change: transform;
+}
+
+.about-nav-right .island-register-btn:hover {
+  transform: translateY(-1px) scale(1.03);
+  background: #ffffff;
+  color: #000000 !important;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+}
+
+.about-nav-right .island-register-btn:active {
+  transform: scale(0.95);
+}
+
+.about-nav-mobile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.about-nav-mobile-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.about-nav-mobile-btn:active {
+  transform: scale(0.92);
+}
+
+@media (min-width: 768px) {
+  .about-nav-mobile-btn {
+    display: none;
+  }
+}
+
+/* =========================================================
+   BLUE WAVE GRADIENT BACKGROUND LAYER
+   ========================================================= */
+.about-hero-wave-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: clamp(320px, 55vh, 520px);
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0.92;
+  contain: strict;
+  transform: translateZ(0);
+  will-change: transform;
+  mask-image: linear-gradient(180deg, transparent 0%, black 20%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 20%, black 85%, transparent 100%);
+}
+
+.about-wave-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: blur(28px);
+}
+
+/* Gradient fade mask overlay at bottom */
+.about-hero-bottom-mask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: clamp(140px, 22vh, 260px);
+  background: linear-gradient(180deg, transparent 0%, rgba(3, 5, 8, 0.65) 55%, #030508 100%);
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* =========================================================
+   HERO AMBIENT & CONTENT
+   ========================================================= */
+
+/* Atmospheric radial glow */
+.about-hero-ambient-glow {
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  width: clamp(600px, 80vw, 1100px);
+  height: clamp(500px, 60vh, 850px);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse 60% 60% at 50% 50%,
+    rgba(20, 148, 180, 0.09) 0%,
+    rgba(211, 78, 63, 0.035) 45%,
+    transparent 75%
+  );
+  filter: blur(85px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Space Theme Starfield Layer in About Hero (Dark Space, Never on the Lower Wave Gradient) */
+.about-hero-starfield-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0.95;
+  mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 68%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 68%);
+}
+
+.about-hero-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 900px) {
+  .about-hero-container {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 4.5rem;
+  }
+}
+
+/* --- Left Column: Text --- */
+.about-hero-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dark Frosted Glass Eyebrow Pill with Overhead Specular Lighting */
+.about-hero-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.48rem 1.35rem;
+  border-radius: 9999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.05) 45%,
+    rgba(10, 14, 22, 0.72) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-top-color: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 6px 12px -2px rgba(255, 255, 255, 0.09),
+    0 6px 20px -2px rgba(0, 0, 0, 0.55);
+  margin-bottom: 1.5rem;
+  width: fit-content;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-hero-badge-pill:hover {
+  transform: translateY(-1px);
+  border-top-color: rgba(255, 255, 255, 0.55);
+  box-shadow:
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.6),
+    inset 0 8px 16px -2px rgba(255, 255, 255, 0.14),
+    0 8px 24px -2px rgba(0, 0, 0, 0.65);
+}
+
+.about-hero-badge-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff !important;
+}
+
+/* Big Title */
+.about-hero-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(3.6rem, 8.2vw, 7rem);
+  line-height: 0.96;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+  text-transform: uppercase;
+}
+
+.about-hero-title-accent {
+  font-style: italic;
+  display: inline-block;
+  padding-right: 0.08em;
+}
+
+/* Tagline */
+.about-hero-tagline {
+  font-family: 'Space Grotesk', monospace;
+  font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  color: #e2e8f0;
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.about-hero-intro-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  font-weight: 400;
+  color: #94a3b8;
+  line-height: 1.7;
+  max-width: 580px;
+  margin: 0 0 2.25rem 0;
+}
+
+/* Dark Frosted Glass Scroll Button */
+.about-hero-action-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-hero-scroll-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 9999px;
+  background: rgba(10, 12, 16, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  color: #ffffff;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.24);
+  transition:
+    transform 0.25s cubic-bezier(0.32, 0.72, 0, 1),
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.about-hero-scroll-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.65),
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.38);
+}
+
+.about-hero-scroll-btn:hover i {
+  transform: translateY(2px);
+}
+
+.about-hero-scroll-btn i {
+  transition: transform 0.2s ease;
+}
+
+/* =========================================================
+   RIGHT COLUMN: UNCURVED VERTICAL RECTANGULAR PARALLAX IMAGE
+   Aspect Ratio: 3 / 4 (Vertical, NOT square, NOT 9:16)
+   ========================================================= */
+.about-hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-hero-frame {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  /* Aspect Ratio: 3/4 is strictly vertical rectangular, NOT square, NOT 9:16 */
+  aspect-ratio: 3 / 4;
+  border-radius: 0 !important; /* UNCURVED */
+  box-shadow:
+    0 28px 65px -10px rgba(0, 0, 0, 0.9),
+    0 0 35px rgba(0, 0, 0, 0.7);
+}
+
+.about-parallax-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0 !important; /* UNCURVED */
+  background: #000000;
+}
+
+/* Parallax image with vertical breathing room for GSAP scrub */
+.about-parallax-img {
+  width: 100%;
+  height: 130%;
+  position: absolute;
+  top: -15%;
+  left: 0;
+  object-fit: cover;
+  border-radius: 0 !important; /* UNCURVED */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+/* Gentle dark vignette scrim on image */
+.about-hero-img-gradient-scrim {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 45%,
+    rgba(3, 5, 8, 0.6) 100%
+  );
+  pointer-events: none;
+  border-radius: 0 !important;
+}
+
+/* Hairline specular frame border (Uncurved) */
+.about-frame-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0 !important; /* UNCURVED */
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Architectural Frame Caption */
+.about-hero-frame-caption {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.85rem;
+  background: rgba(10, 12, 16, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 0 !important; /* UNCURVED */
+  z-index: 4;
+}
+
+.about-frame-num {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+}
+
+.about-frame-label {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #94a3b8;
+}

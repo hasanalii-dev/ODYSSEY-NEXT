@@ -1,0 +1,255 @@
+/* =========================================================
+   ODYSSEY 2027 — iOS DYNAMIC ISLAND SCROLL NAVBAR
+   120 FPS spring physics, compact pill morphing, deep obsidian glass
+   ========================================================= */
+
+.dynamic-island-wrapper {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  width: 100%;
+  z-index: 90;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  pointer-events: none;
+  perspective: 1000px;
+}
+
+@media (min-width: 768px) {
+  .dynamic-island-wrapper {
+    top: 1.25rem;
+  }
+}
+
+/* Dynamic Island Capsule */
+.dynamic-island-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: auto;
+  min-width: 280px;
+  max-width: 94vw;
+  height: 48px;
+  padding: 0.3rem 0.5rem 0.3rem 0.85rem;
+  border-radius: 9999px;
+  background: rgba(8, 12, 18, 0.84);
+  backdrop-filter: blur(32px) saturate(190%);
+  -webkit-backdrop-filter: blur(32px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 16px 40px -10px rgba(0, 0, 0, 0.85),
+    0 0 24px rgba(20, 148, 180, 0.12),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.22);
+  will-change: transform, opacity, filter;
+  transform-origin: center top;
+  /* Authentic Apple iOS 120fps spring animation curve */
+  transition:
+    transform 0.45s cubic-bezier(0.32, 0.72, 0, 1),
+    opacity 0.35s cubic-bezier(0.32, 0.72, 0, 1),
+    filter 0.35s ease,
+    box-shadow 0.35s ease;
+  pointer-events: auto;
+}
+
+@media (min-width: 768px) {
+  .dynamic-island-nav {
+    min-width: 480px;
+    max-width: 580px;
+    gap: 1.5rem;
+  }
+}
+
+/* Visibility states */
+.island-hidden .dynamic-island-nav {
+  transform: translateY(-28px) scale(0.85);
+  opacity: 0;
+  pointer-events: none;
+  filter: blur(10px);
+}
+
+.island-active .dynamic-island-nav {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+  filter: blur(0px);
+}
+
+/* Dynamic Island Left: Logos */
+.island-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.island-next-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 !important; /* DONT CURVE LOGOS */
+  flex-shrink: 0;
+  transition: transform 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.island-next-logo:active {
+  transform: scale(0.92);
+}
+
+.island-next-img {
+  width: 22px;
+  height: 22px;
+  border-radius: 0 !important; /* DONT CURVE LOGOS */
+  object-fit: contain;
+}
+
+.island-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.18);
+  margin: 0 0.15rem;
+}
+
+.island-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  transition: transform 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.island-brand:active {
+  transform: scale(0.94);
+}
+
+.island-wheel {
+  width: 20px;
+  height: 20px;
+  border-radius: 0 !important;
+  object-fit: contain;
+}
+
+.island-brand-text {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  line-height: 1;
+}
+
+/* Dynamic Island Center Links */
+.island-links {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .island-links {
+    display: flex;
+  }
+}
+
+.island-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: #94A3B8;
+  text-decoration: none;
+  padding: 0.32rem 0.75rem;
+  border-radius: 9999px;
+  transition:
+    background-color 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+    color 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+    transform 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.island-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.island-link.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.island-link:active {
+  transform: scale(0.94);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* Dynamic Island Right: Pill Button & Mobile Toggle */
+.island-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.island-cta-pill {
+  display: none;
+}
+
+/* Dynamic Island Register Button: Simply White with Black Font (Apple iOS Style) */
+.island-register-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 1.15rem;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: #000000 !important;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 12px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition:
+    transform 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+  will-change: transform;
+}
+
+.island-register-btn:hover {
+  transform: translateY(-1px) scale(1.03);
+  background: #ffffff;
+  color: #000000 !important;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+}
+
+.island-register-btn:active {
+  transform: scale(0.95);
+}
+
+.island-mobile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  color: #ffffff;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.32, 0.72, 0, 1), background 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .island-mobile-btn {
+    display: none;
+  }
+}
+
+.island-mobile-btn:active {
+  transform: scale(0.92);
+  background: rgba(255, 255, 255, 0.16);
+}

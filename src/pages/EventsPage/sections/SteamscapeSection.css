@@ -1,0 +1,484 @@
+/* =========================================================
+   EVENTS & CHALLENGES — EDITORIAL OPEN CANVAS (ZERO CARD FATIGUE)
+   - Continuous Deep Obsidian Canvas (#030508)
+   - NO enclosing outer cards/boxes
+   - Alternating Layout Rhythms (Left-Split, Right-Split, Panoramic Gallery)
+   - Architectural Hairline Dividers
+   - Large Instrument Serif Typography with Italic Accents
+   - Fluid Expandable Information Dossiers
+   ========================================================= */
+
+/* --- Open Canvas Section Wrapper --- */
+.event-flow-section {
+  position: relative;
+  padding: clamp(4.5rem, 8vw, 7.5rem) 1.5rem;
+  background-color: #030508;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.event-flow-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Atmospheric Ambient Horizon Glow behind each section */
+.event-flow-ambient-glow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(600px, 75vw, 1100px);
+  height: 380px;
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 50%,
+    rgba(20, 148, 180, 0.05) 0%,
+    rgba(215, 94, 48, 0.03) 50%,
+    transparent 75%
+  );
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Layout Grid Variants --- */
+.event-split-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 960px) {
+  .event-split-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 5rem;
+  }
+
+  .event-split-grid.reversed {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+
+  .event-split-grid.reversed .event-flow-content {
+    order: 2;
+  }
+
+  .event-split-grid.reversed .event-flow-visual {
+    order: 1;
+  }
+}
+
+/* --- Content Column --- */
+.event-flow-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Section Index Indicator (e.g. 01 // EXHIBITION) */
+.event-index-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #38d6f8;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.event-index-tag .index-num {
+  font-size: 1.15rem;
+  line-height: 1;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.event-index-tag .index-line {
+  width: 32px;
+  height: 1px;
+  background: rgba(56, 214, 248, 0.4);
+}
+
+/* Sleek Eyebrow Pill with Overhead Lighting */
+.event-flow-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1.25rem;
+  border-radius: 9999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.05) 45%,
+    rgba(10, 14, 22, 0.72) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-top-color: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 6px 12px -2px rgba(255, 255, 255, 0.09),
+    0 6px 20px -2px rgba(0, 0, 0, 0.55);
+  margin-bottom: 1.4rem;
+  width: fit-content;
+}
+
+.event-flow-pill-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff !important;
+}
+
+/* Titles */
+.event-flow-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(3rem, 6.2vw, 5.2rem);
+  line-height: 0.96;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+  text-transform: uppercase;
+}
+
+.event-flow-title-accent {
+  font-style: italic;
+  display: inline-block;
+  padding-right: 0.08em;
+  color: #38d6f8;
+  background: linear-gradient(135deg, #38d6f8 0%, #67e8f9 50%, #bae6fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.event-flow-subtitle {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.4vw, 1.95rem);
+  color: #f5d6ba;
+  margin: 0 0 1rem 0;
+}
+
+.event-flow-theme-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.42rem 1.15rem;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(10, 14, 22, 0.76) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #ffffff !important;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.35),
+    0 4px 16px rgba(0, 0, 0, 0.45);
+  width: fit-content;
+}
+
+.event-flow-theme-badge span {
+  color: #ffffff !important;
+}
+
+/* Exact Official Description Text */
+.event-flow-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.08rem, 1.4vw, 1.24rem);
+  font-weight: 400;
+  color: #cbd5e1;
+  line-height: 1.75;
+  margin: 0 0 2rem 0;
+  max-width: 620px;
+}
+
+/* Architectural Spec Strip (NO BOXES, Clean Linear Minimalist Flow) */
+.event-flow-spec-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 2.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.flow-spec-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+}
+
+.flow-spec-bullet {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #38d6f8;
+}
+
+.flow-spec-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  letter-spacing: 0.01em;
+}
+
+/* Callout Prompt */
+.event-flow-prompt-box {
+  padding: 1.25rem 1.6rem;
+  background: rgba(255, 255, 255, 0.035);
+  border-left: 3px solid #38d6f8;
+  border-radius: 0 0.85rem 0.85rem 0;
+  margin: 0 0 2rem 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Action & Dossier Toggle */
+.event-flow-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.event-flow-dossier-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 1.45rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-top-color: rgba(255, 255, 255, 0.38);
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.25s ease;
+}
+
+.event-flow-dossier-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.32);
+  transform: translateY(-1px);
+}
+
+/* Sleek Architectural Dossier Panel (Unfolding seamlessly) */
+.event-flow-dossier-drawer {
+  overflow: hidden;
+  margin-top: 1.75rem;
+}
+
+.dossier-drawer-content {
+  padding: 1.6rem 2rem;
+  background: rgba(6, 9, 14, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.dossier-stage-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.15rem;
+}
+
+.dossier-stage-tag {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #38d6f8;
+  background: rgba(56, 214, 248, 0.1);
+  border: 1px solid rgba(56, 214, 248, 0.25);
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.dossier-stage-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.dossier-stage-text strong {
+  color: #ffffff;
+}
+
+/* --- Visual Column: Uncurved Floating Frame --- */
+.event-flow-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.event-flow-frame {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 3 / 4;
+  border-radius: 0 !important;
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.95),
+    0 0 35px rgba(0, 0, 0, 0.7);
+}
+
+.event-flow-parallax-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0 !important;
+  background: #000000;
+}
+
+.event-flow-parallax-img {
+  position: absolute;
+  top: -15%;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  object-fit: cover;
+  border-radius: 0 !important;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.event-flow-scrim {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    rgba(3, 5, 8, 0.65) 100%
+  );
+  pointer-events: none;
+  border-radius: 0 !important;
+}
+
+.event-flow-frame-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0 !important;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.event-flow-caption {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  padding: 0.5rem 0.85rem;
+  background: rgba(10, 14, 22, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top-color: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  border-radius: 0 !important;
+  text-align: center;
+  z-index: 4;
+}
+
+.event-flow-caption span {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #ffffff;
+}
+
+/* =========================================================
+   PANORAMIC GALLERY SPREAD (For Section 4: Photography)
+   ========================================================= */
+.event-gallery-spread {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.event-gallery-header {
+  max-width: 860px;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-quote-highlight {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.8rem, 3.6vw, 3.2rem);
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 1.5rem 0;
+  padding: 0 1rem;
+}
+
+.gallery-panorama-stage {
+  width: 100%;
+  max-width: 1100px;
+  position: relative;
+  margin: 0 auto 2.5rem;
+  aspect-ratio: 16 / 9;
+  border-radius: 0 !important;
+  box-shadow: 0 35px 85px rgba(0, 0, 0, 0.95);
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .gallery-panorama-stage {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.gallery-panorama-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 !important;
+}
+
+.gallery-panorama-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0 !important;
+  pointer-events: none;
+}

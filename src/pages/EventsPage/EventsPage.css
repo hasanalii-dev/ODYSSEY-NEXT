@@ -1,0 +1,13 @@
+/* =========================================================
+   EVENTS & CHALLENGES PAGE (PAGE 3)
+   ========================================================= */
+
+.events-page-main {
+  position: relative;
+  width: 100%;
+  background-color: #030508;
+  color: #f1f5f9;
+  overflow: hidden;
+  min-height: 100vh;
+}
+

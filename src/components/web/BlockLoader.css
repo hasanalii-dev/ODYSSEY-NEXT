@@ -1,0 +1,327 @@
+/* =========================================================
+   ODYSSEY 2027 — CELESTIAL CONSTELLATION PAGE LOADER
+   - Animated starry night sky with ambient twinkling micro-stars
+   - Luminous 9-star constellation representing Odyssey's experiences
+   - Laser-drawn starlight connection lines with sequential flow
+   - Diffraction spike cross sparkles on Polaris & Heart star nodes
+   - Zero Logo: 100% Celestial Constellation Art
+   ========================================================= */
+
+#loader-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  overflow: hidden;
+  opacity: 1;
+  background-color: #05070a;
+  perspective: 1200px;
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Cosmic Hyperwarp Out Animation when Loader Exits */
+#loader-wrapper.loader-hidden {
+  opacity: 0;
+  pointer-events: none;
+  background-color: transparent;
+}
+
+#loader-wrapper.loader-hidden .loader-backdrop {
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#loader-wrapper.loader-hidden .loader-nebula-glow {
+  transform: translate(-50%, -50%) scale(2.8);
+  opacity: 0;
+  filter: blur(80px);
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease-out;
+}
+
+#loader-wrapper.loader-hidden .loader-ambient-sky {
+  transform: scale(1.6);
+  opacity: 0;
+  filter: blur(4px);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.55s ease-out;
+}
+
+#loader-wrapper.loader-hidden .constellation-stage {
+  transform: scale(1.55) translateZ(80px);
+  filter: blur(10px) brightness(2.2);
+  opacity: 0;
+  transition:
+    transform 0.68s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.68s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.58s ease-out;
+}
+
+#loader-wrapper.loader-hidden .loader-subtitle-tag {
+  transform: translateY(16px) scale(0.92);
+  opacity: 0;
+  filter: blur(6px);
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out, filter 0.4s ease-out;
+}
+
+#loader-wrapper.loader-removed {
+  display: none !important;
+}
+
+/* Deep Obsidian Backdrop */
+.loader-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: #05070a;
+  z-index: 1;
+}
+
+/* Atmospheric Celestial Core Nebula Glow */
+.loader-nebula-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(260px, 45vw, 440px);
+  height: clamp(260px, 45vw, 440px);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(20, 148, 180, 0.16) 0%,
+    rgba(215, 94, 48, 0.05) 50%,
+    transparent 72%
+  );
+  filter: blur(55px);
+  pointer-events: none;
+  z-index: 2;
+  animation: nebula-breathe 4s ease-in-out infinite alternate;
+}
+
+@keyframes nebula-breathe {
+  0% {
+    transform: translate(-50%, -50%) scale(0.92);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 1;
+  }
+}
+
+/* Ambient Deep Space Twinkling Stars */
+.loader-ambient-sky {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.loader-ambient-star {
+  position: absolute;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.85);
+  animation: ambient-star-twinkle ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+@keyframes ambient-star-twinkle {
+  0%, 100% {
+    opacity: 0.12;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.2);
+  }
+}
+
+/* Centered Loader Content Stage */
+.loader-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Constellation Stage */
+.constellation-stage {
+  width: clamp(220px, 42vw, 300px);
+  height: clamp(220px, 42vw, 300px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.constellation-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  display: block;
+}
+
+/* Constellation Starlight Connecting Lines */
+.constellation-line {
+  stroke: rgba(186, 230, 253, 0.68);
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw-constellation-line cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: stroke-dashoffset;
+}
+
+@keyframes draw-constellation-line {
+  0% {
+    stroke-dashoffset: 1;
+    opacity: 0.2;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.85;
+  }
+}
+
+/* Constellation Star Nodes */
+.star-node-core {
+  fill: #ffffff;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: star-node-ignite 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.star-node-major {
+  fill: #ffffff;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 10px rgba(56, 214, 248, 0.8));
+}
+
+@keyframes star-node-ignite {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Outer Pulsing Aura around Stars */
+.star-node-aura {
+  fill: rgba(56, 214, 248, 0.2);
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: aura-pulse-loop 2s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes aura-pulse-loop {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.25);
+  }
+}
+
+/* Diffraction Cross Sparkle Spikes on Polaris & Heart Star */
+.constellation-spike {
+  fill: rgba(255, 255, 255, 0.88);
+  opacity: 0;
+  filter: drop-shadow(0 0 5px rgba(56, 214, 248, 0.75));
+  will-change: transform, opacity;
+}
+
+.spike-polaris {
+  transform-origin: 160px 46px;
+  animation: spike-bloom-pulse 2.2s ease-in-out 0.3s infinite;
+}
+
+.spike-heart {
+  transform-origin: 160px 156px;
+  animation: spike-bloom-pulse 2.4s ease-in-out 0.55s infinite;
+}
+
+@keyframes spike-bloom-pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  25% {
+    opacity: 0.95;
+    transform: scale(1.1) rotate(6deg);
+  }
+  60% {
+    opacity: 0.75;
+    transform: scale(0.9) rotate(-3deg);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Minimalist Celestial Caption */
+.constellation-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.32rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: caption-fade-in 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards;
+  will-change: transform, opacity, filter;
+}
+
+@keyframes caption-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+.constellation-caption-title {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.constellation-caption-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}

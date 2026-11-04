@@ -1,0 +1,259 @@
+/* =========================================================
+   ABOUT OVERVIEW SECTION
+   - Uncurved Vertical Rectangular Parallax Imagery (Aspect Ratio 3:4)
+   - Dark Frosted Glass Pills (Zero Solid Colors)
+   - Zero 90-Degree Linear Gradients
+   - High-contrast Apple Typography
+   ========================================================= */
+
+.about-overview-section {
+  position: relative;
+  padding: clamp(5rem, 9vw, 8rem) 1.5rem;
+  background-color: #05070A;
+  border-bottom: none;
+  overflow: hidden;
+}
+
+.about-overview-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .about-overview-container {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 4.5rem;
+  }
+}
+
+/* =========================================================
+   UNCURVED VERTICAL RECTANGULAR PARALLAX IMAGE
+   Aspect Ratio: 3 / 4 (Vertical, NOT square, NOT 9:16)
+   ========================================================= */
+.about-overview-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.about-overview-frame {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 3 / 4;
+  border-radius: 0 !important; /* UNCURVED */
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.85),
+    0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.about-overview-parallax-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0 !important; /* UNCURVED */
+  background: #000000;
+}
+
+.about-overview-img {
+  position: absolute;
+  top: -15%;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  object-fit: cover;
+  border-radius: 0 !important; /* UNCURVED */
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.about-overview-scrim {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    rgba(5, 7, 10, 0.65) 100%
+  );
+  pointer-events: none;
+  border-radius: 0 !important;
+}
+
+.about-overview-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0 !important; /* UNCURVED */
+  pointer-events: none;
+  z-index: 3;
+}
+
+.about-overview-badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  padding: 0.4rem 0.85rem;
+  background: rgba(10, 12, 16, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 0 !important; /* UNCURVED */
+  z-index: 4;
+}
+
+.about-overview-badge-tag {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #f1f5f9;
+}
+
+/* =========================================================
+   RIGHT COLUMN: OVERVIEW COPY
+   ========================================================= */
+.about-overview-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dark Frosted Eyebrow Pill with Overhead Specular Lighting */
+.about-overview-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.48rem 1.35rem;
+  border-radius: 9999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.05) 45%,
+    rgba(10, 14, 22, 0.72) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-top-color: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 6px 12px -2px rgba(255, 255, 255, 0.09),
+    0 6px 20px -2px rgba(0, 0, 0, 0.55);
+  margin-bottom: 1.5rem;
+  width: fit-content;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-overview-pill:hover {
+  transform: translateY(-1px);
+  border-top-color: rgba(255, 255, 255, 0.55);
+  box-shadow:
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.6),
+    inset 0 8px 16px -2px rgba(255, 255, 255, 0.14),
+    0 8px 24px -2px rgba(0, 0, 0, 0.65);
+}
+
+.about-overview-pill-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff !important;
+}
+
+.about-overview-heading {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(2.85rem, 5.8vw, 4.75rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.about-overview-lead {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+  font-weight: 400;
+  color: #e2e8f0;
+  line-height: 1.65;
+  margin: 0 0 2.5rem 0;
+}
+
+.about-overview-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.about-overview-feature-item {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem 1.4rem;
+  background: rgba(10, 12, 16, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-feature-indicator,
+.about-feature-text-group {
+  position: relative;
+  z-index: 2;
+}
+
+.about-overview-feature-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.about-feature-indicator {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.about-feature-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.about-feature-title {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.about-feature-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #94a3b8;
+  line-height: 1.55;
+  margin: 0;
+}
+

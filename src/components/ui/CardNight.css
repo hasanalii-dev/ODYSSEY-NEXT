@@ -1,0 +1,29 @@
+.card-night {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  border-radius: 2rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-night:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.card-night--glow-teal:hover {
+  box-shadow: 0 20px 40px -5px rgba(20, 148, 180, 0.2);
+  border-color: rgba(20, 148, 180, 0.4);
+}
+
+.card-night--glow-red:hover {
+  box-shadow: 0 20px 40px -5px rgba(211, 78, 63, 0.2);
+  border-color: rgba(211, 78, 63, 0.4);
+}
+
+.card-night--glow-orange:hover {
+  box-shadow: 0 20px 40px -5px rgba(215, 94, 48, 0.2);
+  border-color: rgba(215, 94, 48, 0.4);
+}

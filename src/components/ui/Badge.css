@@ -1,0 +1,66 @@
+.ody-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: all var(--transition-fast);
+  width: fit-content;
+}
+
+.ody-badge--sm {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+}
+
+.ody-badge--md {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.85rem;
+}
+
+.ody-badge--lg {
+  font-size: 0.85rem;
+  padding: 0.4rem 1.1rem;
+}
+
+/* Badge variants */
+.ody-badge--default {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.ody-badge--accent {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.15);
+}
+
+.ody-badge--gold {
+  background: rgba(251, 191, 36, 0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.15);
+}
+
+.ody-badge--purple {
+  background: rgba(192, 132, 252, 0.12);
+  color: #c084fc;
+  border: 1px solid rgba(192, 132, 252, 0.3);
+  box-shadow: 0 0 12px rgba(192, 132, 252, 0.15);
+}
+
+.ody-badge--emerald {
+  background: rgba(52, 211, 153, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.ody-badge--rose {
+  background: rgba(251, 113, 133, 0.12);
+  color: #fb7185;
+  border: 1px solid rgba(251, 113, 133, 0.3);
+}

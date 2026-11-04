@@ -1,0 +1,22 @@
+{
+  "short_name": "Odyssey '26",
+  "name": "Odyssey 2026: Echoes of Nature",
+  "description": "A 3-day immersive STEM and Biomimicry festival at The Next School.",
+  "icons": [
+    {
+      "src": "img/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?utm_source=homescreen",
+  "background_color": "#05070A",
+  "theme_color": "#05070A",
+  "display": "standalone",
+  "orientation": "portrait"
+}

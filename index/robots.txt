@@ -1,0 +1,33 @@
+# General rules for all bots
+User-agent: *
+
+# 1. Block Admin and Login areas
+Disallow: /admin/
+Disallow: /login/
+Disallow: /dashboard/
+Disallow: /cms/
+
+# 2. Block Internal Search Results
+Disallow: /search/
+Disallow: /results/
+Disallow: /?s=
+Disallow: /search?q=
+
+# 3. Block UserSpecific or Transactional Pages
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /my-account/
+Disallow: /reset-password/
+
+# 4. Block Technical/Junk Files
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# 5. Allow CSS and JS
+Allow: /*.css$
+Allow: /*.js$
+
+# 6. the Sitemap Location (INSERT DOMAIN HERE)
+Sitemap: https://www.domain.com/sitemap.xml

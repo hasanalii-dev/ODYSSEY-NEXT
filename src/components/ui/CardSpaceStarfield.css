@@ -1,0 +1,143 @@
+/* =========================================================
+   COSMIC SPACE THEME: PIN-SHARP STAR DOTS VISIBLY TWINKLING IN LIGHT
+   - Ultra-fine celestial micro dots (No giant circles)
+   - 100% GPU compositor-driven light-twinkle opacity keyframes
+   - Visibly lively tempos (1.3s - 2.5s) with high contrast light modulation
+   - Zero scale changes (dots stay constant exact pin-point size)
+   - Zero expensive CPU filter computations
+   ========================================================= */
+
+.card-space-starfield {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: inherit;
+  opacity: 0.95;
+  contain: strict;
+  transform: translateZ(0);
+  will-change: opacity;
+  transition: opacity 0.3s ease;
+}
+
+/* Deep Space Subtle Nebula Dust Glow */
+.space-nebula-glow {
+  position: absolute;
+  inset: -15%;
+  background:
+    radial-gradient(ellipse 65% 55% at 85% 15%, rgba(56, 214, 248, 0.055) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 50% at 15% 85%, rgba(215, 94, 48, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 40% at 50% 50%, rgba(99, 102, 241, 0.025) 0%, transparent 70%);
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+.space-star-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* =========================================================
+   ACTIVE VISIBLE TWINKLING IN LIGHT
+   Tempos: 1.3s to 2.5s with asynchronous delays and deep contrast
+   ========================================================= */
+
+.star-twinkle-group-a {
+  animation: star-light-twinkle-a 1.3s ease-in-out infinite alternate;
+  will-change: opacity;
+}
+
+.star-twinkle-group-b {
+  animation: star-light-twinkle-b 1.7s ease-in-out infinite alternate;
+  animation-delay: 0.35s;
+  will-change: opacity;
+}
+
+.star-twinkle-group-c {
+  animation: star-light-twinkle-c 2.1s ease-in-out infinite alternate;
+  animation-delay: 0.7s;
+  will-change: opacity;
+}
+
+.star-twinkle-group-d {
+  animation: star-light-twinkle-d 1.5s ease-in-out infinite alternate;
+  animation-delay: 0.2s;
+  will-change: opacity;
+}
+
+.star-twinkle-group-e {
+  animation: star-light-twinkle-e 2.5s ease-in-out infinite alternate;
+  animation-delay: 1.1s;
+  will-change: opacity;
+}
+
+@keyframes star-light-twinkle-a {
+  0% {
+    opacity: 0.08;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.15;
+  }
+}
+
+@keyframes star-light-twinkle-b {
+  0% {
+    opacity: 0.95;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes star-light-twinkle-c {
+  0% {
+    opacity: 0.12;
+  }
+  50% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0.18;
+  }
+}
+
+@keyframes star-light-twinkle-d {
+  0% {
+    opacity: 0.88;
+  }
+  50% {
+    opacity: 0.14;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes star-light-twinkle-e {
+  0% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+
+/* Card hover slight light intensification */
+*:hover > .card-space-starfield {
+  opacity: 1;
+}

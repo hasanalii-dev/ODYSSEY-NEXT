@@ -1,0 +1,87 @@
+.ody-announcement-bar {
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.15), rgba(129, 140, 248, 0.18), rgba(192, 132, 252, 0.15));
+  border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+  font-size: 0.8rem;
+  padding: 0.45rem 0;
+  position: relative;
+  z-index: 60;
+  backdrop-filter: blur(10px);
+}
+
+.ody-announcement-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.ody-announcement-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.ody-announcement-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.2);
+  border-radius: var(--radius-full);
+  padding: 0.2rem;
+}
+
+.ody-announcement-text {
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+
+.ody-announcement-text strong {
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+.ody-announcement-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.ody-announcement-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #c084fc;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all var(--transition-fast);
+}
+
+.ody-announcement-link:hover {
+  color: #e9d5ff;
+  text-decoration: underline;
+}
+
+.ody-announcement-close {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+}
+
+.ody-announcement-close:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .ody-announcement-content {
+    font-size: 0.75rem;
+  }
+  .ody-announcement-right {
+    gap: 0.5rem;
+  }
+}

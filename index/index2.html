@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Odyssey 2026 | Echoes of Nature | The Next School Karachi</title>
+    <meta name="description" content="Join Odyssey 2026: Echoes of Nature at The Next School, Karachi. A 3-day immersive STEM and Biomimicry festival exploring how nature shapes future innovation. Oct 24-26.">
+    <meta name="keywords" content="Science Fair Karachi, Biomimicry Event, The Next School, STEM Education Pakistan, Odyssey 2026, Student Exhibition, Robotics, Art and Science">
+    <meta name="author" content="The Next School">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://odyssey.nextschool.edu.pk/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://odyssey.nextschool.edu.pk/">
+    <meta property="og:title" content="Odyssey 2026 | Echoes of Nature">
+    <meta property="og:description" content="Where the wisdom of the natural world shapes the future of innovation. Join us this October in Karachi.">
+    <meta property="og:image" content="https://odyssey.nextschool.edu.pk/img/og-image.jpg">
+    <meta property="og:locale" content="en_PK">
+    <meta property="og:site_name" content="Odyssey 2026">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://odyssey.nextschool.edu.pk/">
+    <meta property="twitter:title" content="Odyssey 2026 | Echoes of Nature">
+    <meta property="twitter:description" content="A 3-day exploration of Biomimicry, Science, and Art hosted by The Next School.">
+    <meta property="twitter:image" content="https://odyssey.nextschool.edu.pk/img/og-image.jpg">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
+<link rel="manifest" href="site.webmanifest">
+    <title>Odyssey 2026 | Echoes of Nature</title>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationEvent",
+      "name": "Odyssey 2026: Echoes of Nature",
+      "startDate": "2026-10-24T09:00",
+      "endDate": "2026-10-26T17:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "The Next School",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Block 4, Clifton",
+          "addressLocality": "Karachi",
+          "addressRegion": "Sindh",
+          "postalCode": "75600",
+          "addressCountry": "PK"
+        }
+      },
+      "image": [
+        "https://odyssey.nextschool.edu.pk/img/event-cover.jpg"
+      ],
+      "description": "Odyssey 2026 is an immersive journey into Biomimicry.",
+      "organizer": {
+        "@type": "School",
+        "name": "The Next School",
+        "url": "https://thenextschool.edu.pk/"
+      }
+    }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Observer.min.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter Tight', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    },
+                    colors: {
+                        night: '#05070A',
+                        paper: '#F8F9FA',
+                        'brand-teal': '#1494B4',
+                        'brand-dark-teal': '#0E6A82',
+                        'brand-red': '#D34E3F',
+                        'brand-orange': '#D75E30',
+                        'brand-beige': '#F5D6BA',
+                    },
+                    backgroundImage: {
+                        'noise': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.05%22/%3E%3C/svg%3E')",
+                        'grid-pattern': "url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.03\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M0 40L40 0H20L0 20M40 40V20L20 40\'/%3E%3C/g%3E%3C/svg%3E')",
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'scroll': 'scroll 40s linear infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300;400;500;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            background-color: #05070A;
+            color: #cbd5e1; /* Switched to light text */
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            touch-action: none;
+        }
+
+        /* --- SMOOTH SCROLL WRAPPER --- */
+        #smooth-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        #smooth-content {
+            width: 100%;
+            will-change: transform;
+            background-color: #05070A; /* Switched to dark bg */
+        }
+
+        /* --- KINETIC BLOCK LOADER --- */
+        #loader-wrapper {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            pointer-events: none;
+        }
+
+        .loader-slice {
+            position: fixed;
+            top: 0;
+            height: 100%;
+            background-color: #05070A;
+            z-index: 9998;
+            transform-origin: bottom;
+            transition: transform 0.8s cubic-bezier(0.8, 0, 0.2, 1);
+            pointer-events: auto;
+        }
+        .loader-slice::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1494B4, #D34E3F, #D75E30);
+        }
+
+        .block-container {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+            animation: container-rotate 3s ease-in-out infinite;
+            pointer-events: auto;
+        }
+
+        .loader-block {
+            position: absolute;
+            width: 36px;
+            height: 36px;
+            border-radius: 4px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .block-1 { background-color: #1494B4; animation: snap-1 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite; }
+        .block-2 { background-color: #D34E3F; animation: snap-2 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite; }
+        .block-3 { background-color: #D75E30; animation: snap-3 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite; }
+        .block-4 { background-color: #F5D6BA; animation: snap-4 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite; }
+
+        @keyframes snap-1 { 0%, 100% { transform: translate(-110%, -110%); } 50% { transform: translate(-50%, -50%); } }
+        @keyframes snap-2 { 0%, 100% { transform: translate(10%, -110%); } 50% { transform: translate(-50%, -50%); } }
+        @keyframes snap-3 { 0%, 100% { transform: translate(10%, 10%); } 50% { transform: translate(-50%, -50%); } }
+        @keyframes snap-4 { 0%, 100% { transform: translate(-110%, 10%); } 50% { transform: translate(-50%, -50%); } }
+
+        @keyframes container-rotate {
+            0% { transform: rotate(0deg); }
+            45% { transform: rotate(0deg); }
+            55% { transform: rotate(90deg); }
+            100% { transform: rotate(90deg); }
+        }
+
+        #loader-text {
+            pointer-events: auto;
+            transition: opacity 0.5s ease;
+        }
+
+        /* --- FLOATING DOCK --- */
+        #floating-dock-container {
+            position: fixed; top: 2rem; left: 50%; transform: translateX(-50%) translateY(-200%);
+            z-index: 900; transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .dock-pill-link {
+            position: relative; transition: color 0.3s;
+        }
+        .dock-pill-link:hover { color: #fff; }
+
+        /* --- UTILS --- */
+        .marquee-mask { mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+
+        /* Revised Dark Card */
+        .card-day {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.4s;
+            color: white;
+        }
+        .card-day:hover {
+            transform: translateY(-8px);
+            border-color: rgba(20, 148, 180, 0.4);
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 20px 40px -5px rgba(20, 148, 180, 0.15);
+        }
+
+        .nav-pill { transition: all 0.5s; }
+        .nav-pill.inverted { background: rgba(5, 7, 10, 0.95); color: #fff; border-color: rgba(255,255,255,0.1); }
+
+        /* Custom Scrollbar thumb */
+        #virtual-scrollbar-thumb {
+            position: absolute; right: 4px; width: 6px; background: rgba(255,255,255,0.2); border-radius: 4px; z-index: 9999;
+        }
+    </style>
+</head>
+<body class="antialiased relative selection:bg-brand-teal selection:text-white">
+
+    <div id="loader-wrapper">
+        <div class="loader-slice w-[14.28%] left-0" style="transition-delay: 0.0s;"></div>
+        <div class="loader-slice w-[14.28%] left-[14.28%]" style="transition-delay: 0.1s;"></div>
+        <div class="loader-slice w-[14.28%] left-[28.56%]" style="transition-delay: 0.2s;"></div>
+        <div class="loader-slice w-[14.28%] left-[42.84%]" style="transition-delay: 0.3s;"></div>
+        <div class="loader-slice w-[14.28%] left-[57.12%]" style="transition-delay: 0.2s;"></div>
+        <div class="loader-slice w-[14.28%] left-[71.4%]" style="transition-delay: 0.1s;"></div>
+        <div class="loader-slice w-[14.28%] left-[85.68%]" style="transition-delay: 0.0s;"></div>
+
+        <div class="block-container" id="block-loader">
+            <div class="loader-block block-1"></div>
+            <div class="loader-block block-2"></div>
+            <div class="loader-block block-3"></div>
+            <div class="loader-block block-4"></div>
+        </div>
+
+        <div class="absolute bottom-12 w-full text-center z-[10001]" id="loader-text">
+            <p class="text-[10px] font-mono tracking-[0.3em] text-white/50 animate-pulse">INITIATING SYSTEMS</p>
+        </div>
+    </div>
+
+    <div id="floating-dock-container" class="hidden md:block">
+        <div class="flex items-center gap-1 p-1.5 bg-night/90 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl px-4">
+            <a href="#hero-section" class="dock-pill-link w-8 h-8 flex items-center justify-center rounded-full text-white/60 hover:text-white">
+                <i class="bi bi-house-door-fill"></i>
+            </a>
+            <div class="w-px h-4 bg-white/10 mx-2"></div>
+            <a href="#theme" class="dock-pill-link text-xs font-bold text-white/60 px-3 py-2">THEME</a>
+            <a href="#exhibits" class="dock-pill-link text-xs font-bold text-white/60 px-3 py-2">EXHIBITS</a>
+            <a href="#competitions" class="dock-pill-link text-xs font-bold text-white/60 px-3 py-2">COMPETITIONS</a>
+        </div>
+    </div>
+
+    <div id="virtual-scrollbar-thumb"></div>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <div class="fixed top-4 md:top-6 left-0 w-full z-50 flex justify-center px-4" id="navbar-wrapper">
+                <nav class="nav-pill rounded-full px-4 md:px-6 py-3 flex items-center justify-between w-full max-w-[95%] md:max-w-6xl bg-[#0B0F15]/80 backdrop-blur-md shadow-lg border border-white/10 text-slate-200">
+                    <div class="flex items-center">
+                        <img src="img/next-school.png" class="h-6 md:h-8 w-auto object-contain">
+                        <div class="h-6 w-px bg-white/20 mx-4"></div>
+                        <span class="font-display font-bold text-lg tracking-tight text-white">ODYSSEY '26</span>
+                    </div>
+                    <div class="hidden md:flex items-center gap-10 font-sans font-medium text-sm">
+                        <a href="#theme" class="hover:text-brand-teal transition-colors">Theme</a>
+                        <a href="#exhibits" class="hover:text-brand-teal transition-colors">Exhibits</a>
+                        <a href="#competitions" class="hover:text-brand-teal transition-colors">Competitions</a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="text-xs font-mono uppercase tracking-widest opacity-60 hover:opacity-100">Oct 24-26</a>
+                    </div>
+                </nav>
+            </div>
+
+            <header id="hero-section" class="bg-night relative min-h-[110vh] flex items-center pt-20 overflow-hidden">
+                <div class="absolute inset-0 bg-noise opacity-10 pointer-events-none mix-blend-overlay"></div>
+                <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-teal/20 rounded-full blur-[140px] pointer-events-none animate-pulse"></div>
+                <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-red/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+                <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10 w-full -mt-24">
+
+                    <div class="space-y-8 text-center lg:text-left relative z-20">
+                        <div class="hero-anim inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/10 bg-white/5 text-brand-beige text-[10px] font-mono uppercase tracking-widest backdrop-blur-md">
+                            <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
+                            <span>A Next School Initiative</span>
+                        </div>
+
+                        <h1 class="hero-anim font-display text-4xl md:text-6xl lg:text-[5rem] font-bold leading-[1] tracking-tighter text-white">
+                            ECHOES <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal via-white to-brand-beige">OF NATURE.</span>
+                        </h1>
+
+                        <p class="hero-anim text-base md:text-lg text-slate-300 max-w-lg mx-auto lg:mx-0 leading-relaxed font-light">
+                            Odyssey '26 is an immersive journey into <strong>Biomimicry</strong>. We explore how the wisdom of the natural world shapes the future of engineering, art, and sustainability.
+                        </p>
+
+                        <div class="hero-anim flex flex-col sm:flex-row items-center gap-4 pt-2 justify-center lg:justify-start">
+                            <a href="#theme" class="px-8 py-3 rounded-full bg-brand-teal text-white font-sans font-medium text-sm hover:bg-brand-dark-teal transition-all shadow-[0_0_30px_-5px_rgba(20,148,180,0.4)]">
+                                Explore The Theme
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="relative hidden lg:flex items-center justify-center h-full hero-anim">
+                        <div class="relative w-[450px] h-[450px]">
+                            <img src="img/odessey-logo2.png" class="relative z-10 w-full h-full object-contain drop-shadow-2xl animate-float">
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section id="theme" class="py-32 bg-night relative overflow-hidden rounded-t-[3rem] md:rounded-t-[5rem] -mt-20 z-20 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] border-t border-white/5">
+                <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+                <div class="max-w-7xl mx-auto px-6 relative z-10">
+                    <div class="text-center mb-20">
+                        <span class="text-brand-teal font-mono text-xs font-bold uppercase tracking-[0.2em] mb-4 block">The Philosophy</span>
+                        <h2 class="font-display text-4xl md:text-6xl font-bold text-white mb-6 leading-none tracking-tight">Inspired by Patterns.<br>Driven by Purpose.</h2>
+                        <p class="text-slate-400 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                            From the Fibonacci sequence in sunflowers to the aerodynamics of a kingfisher, nature has already solved the problems we face today.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="card-day p-10 rounded-[2rem] md:col-span-2 flex flex-col md:flex-row items-center gap-10 relative overflow-hidden group">
+                            <div class="flex-1 relative z-10">
+                                <div class="w-16 h-16 rounded-2xl bg-brand-teal/10 border border-brand-teal/20 flex items-center justify-center text-brand-teal mb-8">
+                                    <i class="bi bi-flask text-3xl"></i>
+                                </div>
+                                <h3 class="text-3xl font-display font-bold text-white mb-4">STEAMSCAPE</h3>
+                                <p class="text-slate-400 leading-relaxed font-light">
+                                    The core exhibition of Odyssey '26. Students present working models inspired by natural forms.
+                                </p>
+                            </div>
+                            <div class="w-full md:w-64 h-64 md:h-auto min-h-[16rem] relative rounded-2xl overflow-hidden shadow-md border border-white/5">
+                                <img src="https://thenextschool.edu.pk/wp-content/uploads/2025/09/odyssey7.jpg" alt="Steamscape" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100">
+                            </div>
+                        </div>
+
+                        <div class="card-day p-10 rounded-[2rem] relative overflow-hidden group">
+                            <div class="relative z-10">
+                                <div class="w-16 h-16 rounded-2xl bg-brand-red/10 border border-brand-red/20 flex items-center justify-center text-brand-red mb-8">
+                                    <i class="bi bi-puzzle text-3xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-display font-bold text-white mb-4">Prototype Quest</h3>
+                                <p class="text-slate-400 mb-8 font-light">
+                                    Design thinking in action. A live challenge where participants solve a real-world problem.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="competitions" class="py-16 bg-[#0B0F14] border-y border-white/5 overflow-hidden">
+                <div class="max-w-7xl mx-auto px-6 mb-10">
+                     <span class="text-brand-orange font-mono text-xs font-bold uppercase tracking-widest block mb-2">Campus Challenges</span>
+                     <h3 class="font-display text-3xl font-bold text-white">Participating Categories</h3>
+                </div>
+                <div class="relative w-full overflow-hidden marquee-mask">
+                    <div class="flex w-max animate-scroll">
+                        <div class="flex gap-6 px-3">
+                            <span class="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-slate-300 font-medium">Busy Bees</span>
+                            <span class="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-slate-300 font-medium">Fabulous Fibonacci</span>
+                            <span class="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-slate-300 font-medium">Daring Domes</span>
+                            <span class="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-slate-300 font-medium">Fantastic Fractals</span>
+                            <span class="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-slate-300 font-medium">Crystal Quest</span>
+                        </div>
+                        <div class="flex gap-6 px-3">
+                            <span class="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-slate-300 font-medium">Busy Bees</span>
+                            <span class="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-slate-300 font-medium">Fabulous Fibonacci</span>
+                            <span class="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-slate-300 font-medium">Daring Domes</span>
+                            <span class="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-slate-300 font-medium">Fantastic Fractals</span>
+                            <span class="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-slate-300 font-medium">Crystal Quest</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="exhibits" class="py-32 bg-night">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                        <div>
+                            <span class="text-brand-orange font-mono text-xs font-bold uppercase tracking-widest">Experience The Event</span>
+                            <h2 class="font-display text-4xl md:text-5xl font-bold text-white mt-2">Beyond the Science Fair</h2>
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="reveal-card p-8 rounded-[2rem] bg-gradient-to-br from-orange-500/10 to-transparent border border-orange-500/20 hover:border-brand-orange/40 transition-all">
+                            <div class="h-16 w-16 rounded-2xl bg-white/5 mb-6 flex items-center justify-center shadow-sm text-brand-orange"><i class="bi bi-shop text-3xl"></i></div>
+                            <h3 class="font-display font-bold text-2xl text-white mb-3">Pure Bazaar</h3>
+                            <p class="text-slate-400 font-light">Child-led entrepreneurship. Students create and sell eco-friendly products.</p>
+                        </div>
+                        <div class="reveal-card p-8 rounded-[2rem] bg-gradient-to-br from-teal-500/10 to-transparent border border-teal-500/20 hover:border-brand-teal/40 transition-all">
+                            <div class="h-16 w-16 rounded-2xl bg-white/5 mb-6 flex items-center justify-center shadow-sm text-brand-teal"><i class="bi bi-virus text-3xl"></i></div>
+                            <h3 class="font-display font-bold text-2xl text-white mb-3">Nexter's Lab</h3>
+                            <p class="text-slate-400 font-light">Hands-on experimentation zone. Break codes, mix chemicals, and unlock wonders.</p>
+                        </div>
+                        <div class="reveal-card p-8 rounded-[2rem] bg-gradient-to-br from-purple-500/10 to-transparent border border-purple-500/20 hover:border-purple-300/40 transition-all">
+                            <div class="h-16 w-16 rounded-2xl bg-white/5 mb-6 flex items-center justify-center shadow-sm text-purple-400"><i class="bi bi-palette text-3xl"></i></div>
+                            <h3 class="font-display font-bold text-2xl text-white mb-3">Living Patterns</h3>
+                            <p class="text-slate-400 font-light">An interactive live art competition. Recreate nature's designs on canvas.</p>
+                        </div>
+                        <div class="reveal-card p-8 rounded-[2rem] bg-gradient-to-br from-pink-500/10 to-transparent border border-pink-500/20 hover:border-pink-300/40 transition-all">
+                            <div class="h-16 w-16 rounded-2xl bg-white/5 mb-6 flex items-center justify-center shadow-sm text-pink-400"><i class="bi bi-activity text-3xl"></i></div>
+                            <h3 class="font-display font-bold text-2xl text-white mb-3">Patterns in Motion</h3>
+                            <p class="text-slate-400 font-light">Celebrating the artistry of form and symmetry through gymnastics.</p>
+                        </div>
+                         <div class="reveal-card p-8 rounded-[2rem] bg-gradient-to-br from-red-500/10 to-transparent border border-red-500/20 hover:border-brand-red/40 transition-all">
+                            <div class="h-16 w-16 rounded-2xl bg-white/5 mb-6 flex items-center justify-center shadow-sm text-brand-red"><i class="bi bi-brain text-3xl"></i></div>
+                            <h3 class="font-display font-bold text-2xl text-white mb-3">Psych It Out</h3>
+                            <p class="text-slate-400 font-light">Explore the psychology of nature's forms, optical illusions, and mindfulness.</p>
+                        </div>
+                        <div class="reveal-card p-8 rounded-[2rem] bg-gradient-to-br from-yellow-500/10 to-transparent border border-yellow-500/20 hover:border-yellow-300/40 transition-all">
+                            <div class="h-16 w-16 rounded-2xl bg-white/5 mb-6 flex items-center justify-center shadow-sm text-yellow-400"><i class="bi bi-cup-hot text-3xl"></i></div>
+                            <h3 class="font-display font-bold text-2xl text-white mb-3">Food Court</h3>
+                            <p class="text-slate-400 font-light">Enjoy delicious offerings from local vendors to fuel your creativity.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-24">
+                <div class="reveal max-w-5xl mx-auto px-6">
+                    <div class="bg-gradient-to-b from-[#0B0F15] to-[#05070A] rounded-[3rem] p-10 md:p-20 text-center text-white relative overflow-hidden border border-white/10 shadow-2xl">
+                        <div class="absolute inset-0 bg-noise opacity-10 mix-blend-overlay"></div>
+                        <div class="absolute top-0 left-0 w-96 h-96 bg-brand-teal/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+                        <div class="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/10 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+
+                        <div class="relative z-10">
+                            <span class="inline-block py-1 px-3 rounded-full bg-white/5 border border-white/10 text-xs font-mono uppercase tracking-widest mb-6">
+                                Open to All
+                            </span>
+                            <h2 class="font-display text-4xl md:text-6xl font-bold mb-8 tracking-tighter">Mark Your Calendars.</h2>
+                            <p class="text-slate-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                                Whether you are a student, a parent, or a sustainability advocate, Odyssey '26 invites you to witness the future.
+                            </p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto border-t border-white/10 pt-10">
+                                <div>
+                                    <div class="text-3xl font-display font-bold text-brand-teal mb-1">24-26</div>
+                                    <div class="text-sm font-mono text-slate-500 uppercase tracking-widest">October</div>
+                                </div>
+                                <div class="md:border-x md:border-white/10">
+                                    <div class="text-3xl font-display font-bold text-brand-red mb-1">09:00</div>
+                                    <div class="text-sm font-mono text-slate-500 uppercase tracking-widest">AM Onwards</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-display font-bold text-brand-beige mb-1">Karachi</div>
+                                    <div class="text-sm font-mono text-slate-500 uppercase tracking-widest">The Next School</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer id="footer-info" class="bg-night pt-24 pb-12 border-t border-white/5 relative overflow-hidden">
+                <div class="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-t from-brand-teal/5 to-transparent pointer-events-none"></div>
+
+                <div class="max-w-7xl mx-auto px-6 relative z-10">
+                    <div class="grid md:grid-cols-4 gap-12 mb-20">
+                        <div class="col-span-2">
+                            <div class="flex items-center gap-4 mb-8">
+                                <img src="img/next-school.png" alt="The Next School" class="h-10 w-auto transition-all">
+                                <div class="h-8 w-[1px] bg-white/20"></div>
+                                <span class="font-display font-bold text-2xl text-white">ODYSSEY '26</span>
+                            </div>
+                            <p class="text-slate-400 max-w-sm mb-8 leading-relaxed font-light text-sm">
+                                An initiative by The Next School. Empowering young innovators to lead with purpose.
+                            </p>
+                            <div class="flex gap-4">
+                                <a href="#" class="w-12 h-12 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-white hover:bg-brand-teal hover:border-brand-teal hover:scale-110 transition-all"><i class="bi bi-instagram"></i></a>
+                                <a href="#" class="w-12 h-12 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-white hover:bg-brand-teal hover:border-brand-teal hover:scale-110 transition-all"><i class="bi bi-facebook"></i></a>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-mono text-xs uppercase text-slate-500 mb-8 tracking-widest">Explore</h4>
+                            <ul class="space-y-4 text-slate-300 text-sm font-light">
+                                <li><a href="#theme" class="hover:text-brand-teal">The Theme</a></li>
+                                <li><a href="#exhibits" class="hover:text-brand-teal">Exhibits & Labs</a></li>
+                                <li><a href="#competitions" class="hover:text-brand-teal">Competitions</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-mono text-xs uppercase text-slate-500 mb-8 tracking-widest">Contact</h4>
+                            <ul class="space-y-5 text-slate-300 text-sm font-light">
+                                <li class="flex items-start gap-4">
+                                    <i class="bi bi-geo-alt mt-1 text-brand-teal"></i>
+                                    <span>The Next School<br>Block 4, Clifton<br>Karachi</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-8 border-t border-white/5 text-xs text-slate-600 font-mono">
+                        <p>&copy; 2026 The Next School. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+
+        </div> </div> <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            gsap.registerPlugin(ScrollTrigger, Observer);
+
+            // =========================================
+            // 1. KINETIC BLOCK LOADER + BLINDS EXIT
+            // =========================================
+            const loader = document.getElementById('loader-wrapper');
+            const blockLoader = document.getElementById('block-loader');
+            const loaderText = document.getElementById('loader-text');
+            const slices = document.querySelectorAll('.loader-slice');
+            const heroElements = document.querySelectorAll('.hero-anim');
+
+            // Set initial state for hero elements
+            gsap.set(heroElements, { y: 50, opacity: 0 });
+
+            // Simulate Loading Time (2.5s)
+            setTimeout(() => {
+                // Step 1: Fade out the kinetic blocks
+                blockLoader.style.opacity = '0';
+                blockLoader.style.transform = 'scale(2)';
+                loaderText.style.opacity = '0';
+
+                // Step 2: Trigger the Blinds Exit (after 800ms)
+                setTimeout(() => {
+                    slices.forEach(slice => {
+                        slice.style.transform = 'scaleY(0)';
+                    });
+
+                    // Step 3: Animate Hero In & Unlock (after blinds start)
+                    setTimeout(() => {
+                        loader.style.pointerEvents = 'none';
+
+                        // GSAP Hero Reveal
+                        gsap.to(heroElements, {
+                            y: 0,
+                            opacity: 1,
+                            stagger: 0.1,
+                            duration: 1,
+                            ease: "power3.out"
+                        });
+
+                        // Refresh ScrollTrigger now that layout is stable
+                        ScrollTrigger.refresh();
+
+                    }, 800);
+                }, 800);
+
+            }, 2000);
+
+
+            // =========================================
+            // 2. SMOOTH SCROLL OBSERVER (WITH MOBILE FIX)
+            // =========================================
+            const wrapper = document.querySelector("#smooth-wrapper");
+            const content = document.querySelector("#smooth-content");
+            const sbThumb = document.getElementById('virtual-scrollbar-thumb');
+
+            let scrollY = 0;
+            let targetScrollY = 0;
+            let maxScroll = 0;
+
+            function onResize() {
+                maxScroll = content.offsetHeight - window.innerHeight;
+                document.body.style.height = content.offsetHeight + "px";
+            }
+            window.addEventListener("resize", onResize);
+            // Wait slightly for DOM
+            setTimeout(onResize, 100);
+
+            Observer.create({
+                target: window,
+                type: "wheel,touch,pointer",
+                onChange: (self) => {
+                    // Lock if loader is present (though pointer-events:none handles most)
+                    // if(document.getElementById('loader-wrapper').style.pointerEvents !== 'none') return;
+
+                    const isTouch = self.event.type.startsWith('touch') || (self.event.pointerType && self.event.pointerType === 'touch');
+
+                    // --- MOBILE SCROLL FIX ---
+                    const speedFactor = isTouch ? 6 : 1;
+                    const directionMultiplier = isTouch ? -1 : 1;
+
+                    targetScrollY += self.deltaY * speedFactor * directionMultiplier;
+                    targetScrollY = Math.max(0, Math.min(maxScroll, targetScrollY));
+                }
+            });
+
+            // Ticker Loop for Smoothness
+            gsap.ticker.add(() => {
+                scrollY += (targetScrollY - scrollY) * 0.1; // Smooth dampening
+                gsap.set(content, { y: -scrollY });
+
+                // Update Scrollbar Thumb
+                if (sbThumb && maxScroll > 0) {
+                    const winH = window.innerHeight;
+                    let thumbH = (winH / content.offsetHeight) * winH;
+                    if (thumbH < 50) thumbH = 50;
+                    const progress = scrollY / maxScroll;
+                    const thumbY = progress * (winH - thumbH);
+                    gsap.set(sbThumb, { height: thumbH, y: thumbY });
+                }
+
+                ScrollTrigger.update();
+            });
+
+            // Proxy ScrollTrigger to work with our custom smooth scroll
+            ScrollTrigger.scrollerProxy(wrapper, {
+                scrollTop(value) {
+                    if (arguments.length) {
+                        targetScrollY = value;
+                        scrollY = value;
+                        gsap.set(content, { y: -scrollY });
+                        return;
+                    }
+                    return scrollY;
+                },
+                getBoundingClientRect() {
+                    return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+                }
+            });
+            ScrollTrigger.defaults({ scroller: wrapper });
+
+
+            // =========================================
+            // 3. STICKY HERO
+            // =========================================
+            ScrollTrigger.create({
+                trigger: "#hero-section",
+                start: "top top",
+                end: "bottom top",
+                pin: true,
+                pinSpacing: false
+            });
+
+            // Navbar Invert
+            const navbar = document.querySelector('.nav-pill');
+            if(navbar) {
+                ScrollTrigger.create({
+                    start: 100,
+                    onEnter: () => navbar.classList.add('inverted'),
+                    onLeaveBack: () => navbar.classList.remove('inverted')
+                });
+            }
+
+
+            // =========================================
+            // 4. FLOATING DOCK
+            // =========================================
+            const dock = document.getElementById("floating-dock-container");
+            if(dock) {
+                ScrollTrigger.create({
+                    start: 200,
+                    onEnter: () => {
+                        gsap.to(dock, { yPercent: 200, duration: 0.6, ease: "back.out(1.2)" });
+                    },
+                    onLeaveBack: () => {
+                        gsap.to(dock, { yPercent: -200, duration: 0.6, ease: "power3.in" });
+                    }
+                });
+            }
+
+            // =========================================
+            // 5. CARD REVEALS
+            // =========================================
+            const revealCards = document.querySelectorAll(".reveal-card");
+            revealCards.forEach((card, i) => {
+                gsap.fromTo(card,
+                    { y: 50, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 85%",
+                        }
+                    }
+                );
+            });
+        });
+    </script>
+</body>
+</html>

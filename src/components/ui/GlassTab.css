@@ -1,0 +1,34 @@
+.glass-tab {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  user-select: none;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.glass-tab:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.glass-tab-icon {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.glass-tab-label {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: #cbd5e1;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+}

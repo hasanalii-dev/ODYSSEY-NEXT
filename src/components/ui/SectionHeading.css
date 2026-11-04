@@ -1,0 +1,32 @@
+.ody-section-header {
+  margin-bottom: 3.5rem;
+  max-width: 760px;
+}
+
+.ody-section-header--center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.ody-section-header--left {
+  text-align: left;
+}
+
+.ody-section-badge-wrap {
+  margin-bottom: 1rem;
+}
+
+.ody-section-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.ody-section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}

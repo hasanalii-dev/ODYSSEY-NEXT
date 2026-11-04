@@ -1,0 +1,237 @@
+/* =========================================================
+   APPLICATION FORM SECTION (Section 2: Student & Vendor Forms)
+   - Deep Obsidian Flow (#030508)
+   - Dual Portal Grid (Student Form & Vendor Form)
+   ========================================================= */
+
+.app-form-section {
+  position: relative;
+  background-color: #030508;
+  padding: clamp(3.5rem, 6vw, 5.5rem) 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.app-form-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.app-form-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.app-form-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #38d6f8;
+  margin-bottom: 0.85rem;
+}
+
+.app-form-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #38d6f8;
+  box-shadow: 0 0 10px rgba(56, 214, 248, 0.8);
+}
+
+.app-form-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+  text-transform: uppercase;
+}
+
+.app-form-title-accent {
+  font-style: italic;
+  display: inline-block;
+  padding-right: 0.08em;
+  background: linear-gradient(135deg, #38d6f8 0%, #67e8f9 50%, #bae6fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app-form-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  color: #f1f5f9;
+  line-height: 1.6;
+  margin: 0 0 0.5rem 0;
+}
+
+.app-form-body-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Dual Portal Cards */
+.app-portal-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .app-portal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.app-portal-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.8rem, 3vw, 2.5rem);
+  border-radius: 1rem;
+  background: rgba(14, 20, 32, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top-color: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.app-portal-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 214, 248, 0.35);
+  border-top-color: rgba(56, 214, 248, 0.6);
+}
+
+.app-portal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(10, 14, 22, 0.8) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top-color: rgba(255, 255, 255, 0.4);
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff !important;
+  margin-bottom: 1.25rem;
+  width: fit-content;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.app-portal-badge.student svg {
+  color: #38d6f8;
+}
+
+.app-portal-badge.vendor svg {
+  color: #f97316;
+}
+
+.app-portal-card.vendor-card:hover {
+  border-color: rgba(234, 88, 12, 0.4);
+  border-top-color: rgba(249, 115, 22, 0.7);
+}
+
+.app-portal-heading {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(1.75rem, 2.4vw, 2.2rem);
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0 0 0.85rem 0;
+}
+
+.app-portal-description {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.94rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+}
+
+.app-portal-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-grow: 1;
+}
+
+.app-portal-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  color: #94a3b8;
+}
+
+.app-portal-card.student-card .app-portal-checklist li svg {
+  color: #38d6f8;
+  flex-shrink: 0;
+}
+
+.app-portal-card.vendor-card .app-portal-checklist li svg {
+  color: #f97316;
+  flex-shrink: 0;
+}
+
+.app-portal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 9999px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.app-portal-btn.primary {
+  background: #ffffff;
+  color: #030508 !important;
+  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.3);
+}
+
+.app-portal-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.45);
+}
+
+.app-portal-btn.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.app-portal-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+

@@ -1,0 +1,145 @@
+/* =========================================================
+   CELESTIAL HERO BACKGROUND
+   - Pure dark space at top with twinkling star dots (NO top gradient)
+   - Electric royal blue nebula spreading UPWARDS from bottom center
+   - Sleek curved horizon arc at the bottom with illuminated rim
+   - ZERO 90-degree linear gradients
+   ========================================================= */
+
+.fractal-glass-root {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: #05070A;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity;
+  /* Bottom gradient fade mask */
+  -webkit-mask-image: linear-gradient(to bottom, #000000 0%, #000000 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000000 0%, #000000 70%, transparent 100%);
+}
+
+.fractal-glass-root.fractal-glass-visible {
+  opacity: 1;
+}
+
+/* 1. Odyssey Teal Radial Nebula — Prominent, Big, Luminous Spreading Upwards (Color #1494B4)
+   Animated on load to fade up and illuminate smoothly */
+.nebula-bottom-glow {
+  position: absolute;
+  bottom: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(1000px, 92vw, 1750px);
+  height: clamp(850px, 95vh, 1350px);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse 65% 90% at 50% 100%,
+    rgba(38, 206, 245, 0.78) 0%,
+    rgba(20, 148, 180, 0.62) 32%,
+    rgba(14, 105, 145, 0.38) 58%,
+    rgba(6, 45, 70, 0.15) 78%,
+    transparent 94%
+  );
+  filter: blur(48px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  will-change: transform, opacity, filter;
+}
+
+/* Fade up and illuminate animation triggered when hero is loaded */
+.fractal-glass-visible .nebula-bottom-glow {
+  animation: nebula-fade-illuminate 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+
+@keyframes nebula-fade-illuminate {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(45px) scale(0.94);
+    filter: blur(65px) brightness(0.65);
+  }
+  65% {
+    filter: blur(50px) brightness(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+    filter: blur(52px) brightness(1);
+  }
+}
+
+/* 2. Crisp Pin-Sharp Star Dots Layer (Pure Deep Space at Top) */
+.fractal-stars-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.fractal-star-dot {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #ffffff;
+  pointer-events: none;
+  animation: star-twinkle var(--star-dur, 3s) ease-in-out infinite;
+  animation-delay: var(--star-delay, 0s);
+  opacity: var(--star-opacity, 0.75);
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.85);
+  will-change: transform, opacity;
+}
+
+.fractal-star-dot.has-glow {
+  background-color: #ffffff;
+  box-shadow:
+    0 0 4px #ffffff,
+    0 0 10px rgba(0, 140, 255, 0.9),
+    0 0 18px rgba(0, 102, 255, 0.55);
+}
+
+@keyframes star-twinkle {
+  0%, 100% {
+    opacity: calc(var(--star-opacity, 0.75) * 0.35);
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: var(--star-opacity, 0.75);
+    transform: scale(1.2);
+  }
+}
+
+/* 3. Bottom Curved Horizon Arc — Subtle & Delicate */
+.hero-bottom-arc-wrapper {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: clamp(60px, 7.5vw, 100px);
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0.55;
+}
+
+.hero-bottom-arc-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 4. Bottom Gradient Fade Mask Layer */
+.hero-bottom-fade-mask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: clamp(140px, 20vh, 250px);
+  background: linear-gradient(to bottom, transparent 0%, rgba(5, 7, 10, 0.6) 50%, #05070A 100%);
+  pointer-events: none;
+  z-index: 4;
+}

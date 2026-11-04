@@ -1,0 +1,472 @@
+/* =========================================================
+   SECTION 6: PARTICIPATION AND REGISTRATIONS
+   - Deep Black Obsidian Apple/iOS Frosted Glass Cards
+   - Half-visible low-opacity white radial ellipse at top
+   - 3 Sine Wave Gradients:
+       Card 1: Blue Wave Gradient
+       Card 2: Red Wave Gradient
+       Card 3: Orange Wave Gradient
+   - One-Time Scroll Reveal Animation (120fps)
+   - Frosted Glass Pills (Zero Solid Colors)
+   - Zero 90-Degree Linear Gradients
+   ========================================================= */
+
+.participation-section-root {
+  position: relative;
+  background-color: #05070A;
+  padding: clamp(5.5rem, 9vw, 9rem) 1.5rem clamp(6.5rem, 10vw, 10rem);
+  overflow: hidden;
+  z-index: 10;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Atmospheric ambient radial glow */
+.participation-ambient-glow {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(600px, 75vw, 1200px);
+  height: clamp(500px, 60vh, 850px);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse 60% 60% at 50% 50%,
+    rgba(20, 148, 180, 0.08) 0%,
+    rgba(211, 78, 63, 0.035) 45%,
+    transparent 75%
+  );
+  filter: blur(85px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.participation-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   1. HEADER: CENTER-ALIGNED WITH ONE-TIME REVEAL
+   ========================================================= */
+.participation-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto clamp(3.5rem, 6vw, 5rem);
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  filter: blur(8px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.participation-section-root.is-revealed .participation-header {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* iOS Frosted Eyebrow Pill (Translucent, NO solid color) */
+.participation-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.42rem 1.15rem;
+  border-radius: 9999px;
+  background: rgba(10, 14, 22, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  margin-bottom: 1.5rem;
+}
+
+.participation-eyebrow-text {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* Large Clean Instrument Serif Title */
+.participation-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(2.85rem, 6.2vw, 5.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+  text-transform: uppercase;
+}
+
+/* Multi-tone Vertical Gradient Accent — NO 90 DEGREE LINEAR GRADIENTS */
+.participation-title-accent {
+  font-style: italic;
+  background: linear-gradient(180deg, #F5D6BA 0%, #D75E30 50%, #D34E3F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding-right: 0.08em;
+  filter: drop-shadow(0 2px 14px rgba(215, 94, 48, 0.35));
+}
+
+.participation-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  font-weight: 400;
+  color: #cbd5e1;
+  line-height: 1.65;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   2. THREE PARTICIPATION CARDS (iOS FROSTED BLACK + WAVE GRADIENTS)
+   ========================================================= */
+.participation-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 860px) {
+  .participation-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Base Frosted Glass Card */
+.participation-card {
+  position: relative;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: clamp(1.6rem, 2.2vw, 2.1rem);
+  padding: clamp(2.25rem, 3.2vw, 2.85rem) clamp(1.85rem, 2.6vw, 2.35rem);
+  backdrop-filter: blur(36px);
+  -webkit-backdrop-filter: blur(36px);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.85),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(32px);
+  filter: blur(8px);
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  will-change: opacity, transform, filter;
+}
+
+/* Card Content Container (ensures flex column layout above wave layer) */
+.participation-card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Staggered entry animation when revealed */
+.participation-section-root.is-revealed .participation-card:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+  transition-delay: 0.1s;
+}
+
+.participation-section-root.is-revealed .participation-card:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+  transition-delay: 0.22s;
+}
+
+.participation-section-root.is-revealed .participation-card:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+  transition-delay: 0.34s;
+}
+
+/* Hover effect */
+.participation-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.95),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* Half-visible low-opacity white radial ellipse at top of card */
+.participation-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(220px, 80%, 320px);
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.02) 50%,
+    transparent 75%
+  );
+  filter: blur(14px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* =========================================================
+   WAVE GRADIENT BACKGROUND LAYER
+   3 Sine Waves with same amplitude, staggered Y offsets + Gaussian Blur
+   ========================================================= */
+.part-wave-bg {
+  position: absolute;
+  inset: -10% 0;
+  width: 100%;
+  height: 120%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.92;
+  contain: strict;
+  transform: translateZ(0);
+  will-change: transform;
+  mask-image: linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.participation-card:hover .part-wave-bg {
+  opacity: 0.98;
+  transform: scale(1.03);
+}
+
+.part-wave-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: blur(24px);
+}
+
+/* Card Header: Icon + Badge */
+.participation-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+}
+
+.participation-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.35rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.participation-card:hover .participation-icon-box {
+  transform: scale(1.08);
+}
+
+.participation-badge-pill {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  background: rgba(10, 14, 22, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Card Content: Title & Bullet Text */
+.participation-card-body {
+  margin-bottom: 1rem;
+}
+
+.participation-card-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0 0 0.85rem 0;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.participation-card-bullet {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Bottom Highlight Tag (Dark Frosted Glassmorphism, NO solid color) */
+.participation-card-footer {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.participation-footer-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  padding: 0.32rem 0.85rem;
+  border-radius: 9999px;
+  background: rgba(10, 14, 22, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* =========================================================
+   INDIVIDUAL THEMED ACCENTS FOR CARDS
+   Card 1: Blue / Cyan
+   Card 2: Red
+   Card 3: Orange
+   ========================================================= */
+
+/* --- Card 1: Blue / Cyan Theme --- */
+.part-card-blue:hover {
+  border-color: rgba(56, 214, 248, 0.35);
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.95),
+    0 0 25px rgba(20, 148, 180, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.part-card-blue .participation-badge-pill {
+  color: #ffffff;
+  background: rgba(10, 14, 22, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top-color: rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.part-card-blue .participation-footer-pill {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.16);
+  border-top-color: rgba(255, 255, 255, 0.3);
+}
+
+.part-card-blue:hover .participation-footer-pill {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+  border-top-color: rgba(255, 255, 255, 0.45);
+  background: rgba(12, 16, 26, 0.82);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.part-card-blue:hover .participation-icon-box {
+  border-color: rgba(56, 214, 248, 0.4);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 0 16px rgba(56, 214, 248, 0.3);
+}
+
+/* --- Card 2: Red Theme --- */
+.part-card-red:hover {
+  border-color: rgba(211, 78, 63, 0.38);
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.95),
+    0 0 25px rgba(211, 78, 63, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.part-card-red .participation-badge-pill {
+  color: #ffffff;
+  background: rgba(10, 14, 22, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top-color: rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.part-card-red .participation-footer-pill {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.16);
+  border-top-color: rgba(255, 255, 255, 0.3);
+}
+
+.part-card-red:hover .participation-footer-pill {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+  border-top-color: rgba(255, 255, 255, 0.45);
+  background: rgba(12, 16, 26, 0.82);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.part-card-red:hover .participation-icon-box {
+  border-color: rgba(211, 78, 63, 0.45);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 0 16px rgba(211, 78, 63, 0.3);
+}
+
+/* --- Card 3: Orange Theme --- */
+.part-card-orange:hover {
+  border-color: rgba(215, 94, 48, 0.38);
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.95),
+    0 0 25px rgba(215, 94, 48, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.part-card-orange .participation-badge-pill {
+  color: #ffffff;
+  background: rgba(10, 14, 22, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top-color: rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.part-card-orange .participation-footer-pill {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.16);
+  border-top-color: rgba(255, 255, 255, 0.3);
+}
+
+.part-card-orange:hover .participation-footer-pill {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+  border-top-color: rgba(255, 255, 255, 0.45);
+  background: rgba(12, 16, 26, 0.82);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.part-card-orange:hover .participation-icon-box {
+  border-color: rgba(215, 94, 48, 0.45);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 0 16px rgba(215, 94, 48, 0.3);
+}

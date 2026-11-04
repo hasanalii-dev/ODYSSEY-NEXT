@@ -1,0 +1,346 @@
+/* =========================================================
+   GALLERY HERO SECTION
+   - Deep Obsidian Background (#030508)
+   - Bold Fluid Sine Waves (High Amplitude, Anchored to Bottom)
+   - Dark Glass Eyebrow Pill with Overhead Specular Lighting
+   - Instrument Serif Typography with Italic Accents
+   - Integrated Gallery Introduction
+   ========================================================= */
+
+.gallery-hero-section {
+  position: relative;
+  background-color: #030508;
+  padding: 1.25rem 1.5rem clamp(4rem, 7vw, 6.5rem);
+  overflow: hidden;
+  min-height: 78vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fluid Wave Gradient Layer (Balanced Celestial Blue Waves) */
+.gallery-hero-wave-layer {
+  position: absolute;
+  top: 16%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 84%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.92;
+  contain: strict;
+  transform: translateZ(0);
+  overflow: hidden;
+}
+
+.gallery-hero-wave-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: blur(28px);
+}
+
+/* Starfield in Upper Dark Sky */
+.gallery-hero-starfield-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  mask-image: linear-gradient(180deg, #000 0%, #000 22%, transparent 40%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 22%, transparent 40%);
+}
+
+.gallery-hero-ambient-glow {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(650px, 75vw, 1200px);
+  height: 480px;
+  background: radial-gradient(
+    ellipse 65% 50% at 50% 50%,
+    rgba(20, 148, 180, 0.08) 0%,
+    rgba(211, 78, 63, 0.04) 50%,
+    transparent 75%
+  );
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* =========================================================
+   TOP NAVBAR (Gallery Page)
+   ========================================================= */
+.gallery-top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1320px;
+  margin: 0 auto 3.5rem;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  padding: 0.5rem 0;
+}
+
+.gallery-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.gallery-next-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  text-decoration: none;
+}
+
+.gallery-next-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.gallery-nav-divider {
+  width: 1px;
+  height: 18px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.gallery-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+
+.gallery-nav-wheel {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.gallery-nav-brand-text {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+}
+
+/* Center Links */
+.gallery-nav-links {
+  display: none;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+@media (min-width: 768px) {
+  .gallery-nav-links {
+    display: flex;
+  }
+}
+
+.gallery-nav-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #94a3b8;
+  text-decoration: none;
+  text-transform: lowercase;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.gallery-nav-link:hover {
+  color: #ffffff;
+}
+
+.gallery-nav-link.active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.gallery-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: #38d6f8;
+  border-radius: 9999px;
+}
+
+/* Right Nav Buttons */
+.gallery-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.gallery-register-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.4rem;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: #05070a;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-register-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.35);
+}
+
+.gallery-mobile-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .gallery-mobile-btn {
+    display: none;
+  }
+}
+
+/* =========================================================
+   MAIN HERO CONTENT
+   ========================================================= */
+.gallery-hero-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gallery-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Dark Glass Eyebrow Pill with Overhead Specular Lighting */
+.gallery-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.48rem 1.35rem;
+  border-radius: 9999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(255, 255, 255, 0.04) 45%,
+    rgba(10, 14, 22, 0.74) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-top-color: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 6px 12px -2px rgba(255, 255, 255, 0.09),
+    0 6px 20px -2px rgba(0, 0, 0, 0.55);
+  margin-bottom: 2rem;
+  transition: transform 0.25s ease;
+}
+
+.gallery-eyebrow-pill:hover {
+  transform: translateY(-1px);
+}
+
+.gallery-eyebrow-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff !important;
+}
+
+/* Hero Title */
+.gallery-hero-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(3.8rem, 8.5vw, 7.5rem);
+  line-height: 0.94;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.gallery-hero-title-accent {
+  font-style: italic;
+  display: inline-block;
+  padding-right: 0.08em;
+  color: #38d6f8;
+  background: linear-gradient(135deg, #38d6f8 0%, #67e8f9 50%, #bae6fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Official Subtitle */
+.gallery-hero-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-weight: 500;
+  color: #f5d6ba;
+  max-width: 680px;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.45;
+}
+
+/* Section 2: Gallery Introduction */
+.gallery-intro-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+  font-weight: 400;
+  color: #cbd5e1;
+  max-width: 740px;
+  margin: 0 auto;
+  line-height: 1.7;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+}
+
+.gallery-hero-bottom-mask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(180deg, transparent 0%, #030508 100%);
+  pointer-events: none;
+  z-index: 2;
+}

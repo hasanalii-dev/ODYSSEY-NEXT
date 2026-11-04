@@ -1,0 +1,14 @@
+/* =========================================================
+   GALLERY PAGE MAIN CONTAINER
+   - Continuous obsidian dark flow (#030508)
+   ========================================================= */
+
+.gallery-page-main {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #030508;
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+

@@ -1,0 +1,110 @@
+/* =========================================================
+   GALLERY CLOSING SECTION (Section 4)
+   - Bold Editorial Typography (NO Pill)
+   - Architectural Implementation Note Notice
+   - Action Navigation Row
+   ========================================================= */
+
+.gallery-closing-section {
+  position: relative;
+  background-color: #030508;
+  padding: clamp(3rem, 6vw, 5.5rem) 1.5rem clamp(5rem, 8vw, 7.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.gallery-closing-container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================================================
+   Section 4: Closing Statement (Editorial Bold Typography)
+   ========================================================= */
+.gallery-closing-statement-wrap {
+  margin-bottom: clamp(2.5rem, 5vw, 3.75rem);
+}
+
+.gallery-statement-eyebrow {
+  display: block;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #38d6f8;
+  margin-bottom: 0.85rem;
+}
+
+.gallery-closing-statement {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff 30%, #f5d6ba 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================================================
+   Action Navigation Buttons
+   ========================================================= */
+.gallery-closing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.gallery-nav-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.75rem;
+  border-radius: 9999px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.gallery-nav-cta-btn.primary {
+  background: #ffffff;
+  color: #030508 !important;
+  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.28);
+}
+
+.gallery-nav-cta-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.42);
+}
+
+.gallery-nav-cta-btn.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top-color: rgba(255, 255, 255, 0.38);
+  color: #ffffff;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.gallery-nav-cta-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+

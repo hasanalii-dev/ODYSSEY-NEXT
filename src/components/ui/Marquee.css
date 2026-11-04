@@ -1,0 +1,6 @@
+.marquee-content {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 0.75rem;
+  flex-shrink: 0;
+}

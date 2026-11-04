@@ -1,0 +1,353 @@
+/* =========================================================
+   PURPLE GLOW HERO (DITOLABS STYLE)
+   - Deep night black background (#05070a)
+   - Glowing electric purple/violet ellipse (assets/elipse.svg)
+   - Tall condensed headline with ® and ■ geometric accents
+   - Exact user content (Headline + Sub-paragraphs)
+   - Monospace index (001)
+   - Rotating "SCROLL DOWN • SCROLL DOWN" circular badge
+   - Bottom monochrome sponsor / institutional logo ribbon
+   ========================================================= */
+
+.purple-hero-root {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #05070a;
+  color: #f1f5f9;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 2rem 2.5rem;
+  user-select: none;
+}
+
+@media (min-width: 1024px) {
+  .purple-hero-root {
+    padding: 2rem 4rem 3rem;
+  }
+}
+
+/* === 1. GLOWING PURPLE ELLIPSE BACKGROUND === */
+.purple-ellipse-bg {
+  position: absolute;
+  top: -10%;
+  right: -15%;
+  width: 75vw;
+  max-width: 950px;
+  height: 120vh;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.92;
+  mix-blend-mode: screen;
+  filter: blur(10px);
+  transform: rotate(-5deg);
+}
+
+/* Fallback radial glow if SVG is rendering */
+.purple-ambient-fallback {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  width: 550px;
+  height: 650px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(91, 27, 224, 0.75) 0%, rgba(47, 10, 140, 0.45) 50%, rgba(5, 7, 10, 0) 80%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle micro sparkle dots */
+.sparkle-dot {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.75;
+}
+
+/* === 2. TOP NAVIGATION BAR === */
+.purple-nav {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+}
+
+.purple-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.purple-logo-icon {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.purple-logo-text {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.purple-nav-links {
+  display: none;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .purple-nav-links {
+    display: flex;
+  }
+}
+
+.purple-nav-link {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.purple-nav-link:hover {
+  color: #ffffff;
+}
+
+.purple-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.purple-nav-talk {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.purple-nav-talk:hover {
+  opacity: 0.8;
+}
+
+.purple-menu-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.purple-menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+  transform: scale(1.05);
+}
+
+/* === 3. MAIN HERO HEADLINE === */
+.purple-headline-wrapper {
+  position: relative;
+  z-index: 10;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+  max-width: 900px;
+}
+
+.purple-headline-text {
+  font-family: 'Barlow Condensed', 'Oswald', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.2rem, 5.2vw, 4.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+/* Superscript ® badge */
+.accent-r-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(1.4rem, 2.5vw, 2.2rem);
+  height: clamp(1.4rem, 2.5vw, 2.2rem);
+  border-radius: 50%;
+  border: 1.5px solid rgba(226, 232, 240, 0.45);
+  font-size: clamp(0.75rem, 1.2vw, 1.1rem);
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 600;
+  color: rgba(226, 232, 240, 0.7);
+  vertical-align: super;
+  margin-left: 0.5rem;
+  line-height: 1;
+}
+
+/* Inline Grey Block ■ */
+.accent-grey-square {
+  display: inline-block;
+  width: clamp(1.6rem, 3.2vw, 2.6rem);
+  height: clamp(1.6rem, 3.2vw, 2.6rem);
+  background-color: #475569;
+  vertical-align: middle;
+  margin: 0 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* === 4. MID ROW: INDEX (001), SUB-PARAGRAPHS & ROTATING BADGE === */
+.purple-mid-row {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .purple-mid-row {
+    grid-template-columns: 80px 1fr 140px;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+.purple-index-tag {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+.purple-subcontent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 780px;
+}
+
+.purple-lead-paragraph {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: clamp(1.02rem, 1.6vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+.purple-body-paragraph {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: clamp(0.88rem, 1.25vw, 1rem);
+  font-weight: 300;
+  line-height: 1.65;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Rotating "SCROLL DOWN" badge */
+.scroll-badge-wrapper {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: start;
+}
+
+@media (min-width: 768px) {
+  .scroll-badge-wrapper {
+    justify-self: end;
+  }
+}
+
+.scroll-badge-svg {
+  width: 100%;
+  height: 100%;
+  animation: badge-spin 14s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes badge-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.scroll-badge-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 1.25rem;
+  pointer-events: none;
+}
+
+/* === 5. BOTTOM SPONSOR / HOSPITAL LOGOS RIBBON === */
+.purple-logos-ribbon {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  opacity: 0.65;
+}
+
+.partner-logo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  filter: grayscale(100%) brightness(1.2);
+  transition: opacity 0.3s ease;
+}
+
+.partner-logo-item:hover {
+  opacity: 1;
+}
+
+.partner-logo-text {
+  font-family: 'Inter Tight', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  line-height: 1.1;
+}

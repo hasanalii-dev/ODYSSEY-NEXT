@@ -1,0 +1,427 @@
+/* =========================================================
+   SECTION 3: THE PHILOSOPHY / EVENT OVERVIEW
+   - Premium iOS Glassmorphism Bento Architecture
+   - 3-Sine-Wave Gaussian-Blurred Atmospheric Gradients
+   - Zero Solid-Colored Pills (Authentic Frosted Glass Only)
+   - Zero 90-degree linear gradients
+   ========================================================= */
+
+.philosophy-section-root {
+  position: relative;
+  background-color: #05070A;
+  padding: clamp(5rem, 9vw, 8.5rem) 1.5rem clamp(6rem, 10vw, 9rem);
+  overflow: hidden;
+  z-index: 10;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Subtle background atmospheric ambient light */
+.philosophy-ambient-glow {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(600px, 75vw, 1200px);
+  height: clamp(500px, 60vh, 850px);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse 60% 60% at 50% 50%,
+    rgba(20, 148, 180, 0.1) 0%,
+    rgba(14, 85, 125, 0.04) 45%,
+    transparent 75%
+  );
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.philosophy-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- 1. SECTION HEADER --- */
+.philosophy-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto clamp(3.5rem, 6vw, 5rem);
+}
+
+/* iOS Frosted Eyebrow Pill (Dark Glassmorphism) */
+.philosophy-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.42rem 1.15rem;
+  border-radius: 9999px;
+  background: rgba(10, 14, 22, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  margin-bottom: 1.5rem;
+}
+
+.philosophy-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.6; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.philosophy-eyebrow-text {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* Large Impact Title */
+.philosophy-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(2.85rem, 6.2vw, 5.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+  text-transform: uppercase;
+}
+
+.philosophy-title-accent {
+  font-style: italic;
+  background: linear-gradient(180deg, #5ce8ff 0%, #1494B4 60%, #0d6075 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding-right: 0.08em;
+  filter: drop-shadow(0 2px 14px rgba(20, 148, 180, 0.35));
+}
+
+.philosophy-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  font-weight: 400;
+  color: #94a3b8;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* --- 2. BENTO CARDS GRID --- */
+.philosophy-bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+@media (min-width: 900px) {
+  .philosophy-bento-grid {
+    grid-template-columns: 1.12fr 0.88fr;
+  }
+}
+
+/* Common iOS Glass Bento Card */
+.philosophy-card {
+  position: relative;
+  background: rgba(10, 14, 22, 0.76);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: clamp(1.5rem, 2.5vw, 2.25rem);
+  padding: clamp(2rem, 3.5vw, 3rem);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.philosophy-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+/* --- WAVE GRADIENT BACKGROUND LAYER ---
+   3 Sine Waves with identical amplitudes and different Y offsets + Gaussian Blur */
+.card-wave-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.36;
+  contain: strict;
+  transform: translateZ(0);
+  will-change: transform;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.philosophy-card:hover .card-wave-bg {
+  opacity: 0.5;
+  transform: scale(1.02);
+}
+
+.card-wave-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: blur(24px);
+}
+
+/* Foreground content stays razor-sharp over the blurred wave gradient */
+.philosophy-card-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+/* Top Card Bar: Badge + Icon */
+.philosophy-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+/* Card Part Tag — Dark Glassmorphism, NO solid color */
+.philosophy-card-part-tag {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  background: rgba(10, 14, 22, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.philosophy-card-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.25rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.philosophy-card:hover .philosophy-card-icon-box {
+  transform: scale(1.08);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.philosophy-card-heading {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(2rem, 2.7vw, 2.75rem);
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+  text-transform: uppercase;
+}
+
+/* Exact provided text */
+.philosophy-card-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.02rem, 1.2vw, 1.15rem);
+  font-weight: 400;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin: 0 0 2rem 0;
+}
+
+/* Feature tags — Translucent frosted glass, NO solid color */
+.philosophy-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.philosophy-tag-pill {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: rgba(10, 14, 22, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.philosophy-card:hover .philosophy-tag-pill {
+  color: #ffffff;
+  background: rgba(14, 18, 28, 0.82);
+  border-color: rgba(255, 255, 255, 0.2);
+  border-top-color: rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* --- 3. WELCOME STATEMENT BANNER (FULL WIDTH) --- */
+.philosophy-welcome-banner {
+  position: relative;
+  background: radial-gradient(
+    ellipse 85% 120% at 50% 0%,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(10, 14, 22, 0.8) 70%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: clamp(1.5rem, 2.5vw, 2.25rem);
+  padding: clamp(2rem, 3.5vw, 3.25rem);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+}
+
+.philosophy-welcome-banner:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+@media (min-width: 860px) {
+  .philosophy-welcome-banner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.philosophy-welcome-content {
+  flex: 1;
+}
+
+/* Dark Frosted Glass Badge, NO solid color */
+.philosophy-welcome-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 0.32rem 0.85rem;
+  border-radius: 9999px;
+  background: rgba(10, 14, 22, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 4px 12px rgba(0, 0, 0, 0.35);
+  margin-bottom: 0.85rem;
+}
+
+.philosophy-welcome-badge i {
+  font-size: 0.85rem;
+  color: #38d6f8;
+}
+
+.philosophy-welcome-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.25rem, 1.8vw, 1.65rem);
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.philosophy-welcome-highlight {
+  background: linear-gradient(180deg, #5ce8ff 0%, #1494B4 60%, #0d6075 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* iOS tactile frosted action pill, NO solid flat background */
+.philosophy-welcome-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.65rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.philosophy-welcome-cta:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.philosophy-welcome-cta:active {
+  transform: scale(0.97);
+}
+
+.philosophy-welcome-arrow {
+  transition: transform 0.2s ease;
+}
+
+.philosophy-welcome-cta:hover .philosophy-welcome-arrow {
+  transform: translateX(4px);
+}

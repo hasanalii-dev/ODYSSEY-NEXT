@@ -1,0 +1,998 @@
+/* =========================================================
+   ODYSSEY 2027 — HERO SECTION
+   - Top navbar: Transparent, without any body/capsule container
+   - Uncurved logos (sharp, no curved borders)
+   - Font Pairing: Instrument Serif (Display) & DM Sans (Body/Sans)
+   - Sleek glassmorphism pill-shaped badge (no dot)
+   ========================================================= */
+
+:root {
+  --ody-bg: #05070A;
+  --ody-surface: #0a111a;
+  --ody-surface-glass: rgba(14, 23, 34, 0.75);
+  --ody-border-glass: rgba(255, 255, 255, 0.12);
+  --ody-teal: #1494B4;
+  --ody-teal-bright: #1cb5db;
+  --ody-coral: #D34E3F;
+  --ody-orange: #D75E30;
+  --ody-sand: #F5D6BA;
+  --ody-text: #F8FAFC;
+  --ody-muted: #94A3B8;
+}
+
+.hero-root {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #05070A;
+  color: var(--ody-text);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Ambient Radial Glows */
+.hero-glow-teal {
+  position: absolute;
+  top: 8%;
+  right: 6%;
+  width: clamp(400px, 45vw, 700px);
+  height: clamp(400px, 45vw, 700px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20, 148, 180, 0.22) 0%, transparent 68%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-glow-bottom {
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(211, 78, 63, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.025;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 80%);
+}
+
+/* =========================================================
+   1. TOP NAVBAR (WITHOUT ANY BODY / CAPSULE CONTAINER)
+   ========================================================= */
+.hero-nav {
+  position: relative;
+  z-index: 40;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.75rem 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  will-change: transform, opacity, filter;
+}
+
+/* Nav Primed & Loaded States */
+.hero-primed .hero-nav {
+  opacity: 0;
+  transform: translateY(-16px);
+  filter: blur(10px);
+}
+
+.hero-loaded .hero-nav {
+  animation: ios-fade-down 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+}
+
+@media (min-width: 1024px) {
+  .hero-nav {
+    padding: 2.25rem 3rem 1rem;
+  }
+}
+
+.hero-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+/* Uncurved Logo Container */
+.hero-next-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 0 !important; /* DONT CURVE LOGOS */
+  background: transparent;
+  border: none;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hero-next-box:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.hero-next-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 0 !important; /* DONT CURVE LOGOS */
+  object-fit: contain;
+}
+
+.hero-nav-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.18);
+  margin: 0 0.25rem;
+}
+
+.hero-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+
+.hero-nav-wheel {
+  width: 26px;
+  height: 26px;
+  border-radius: 0 !important; /* DONT CURVE LOGOS */
+  object-fit: contain;
+}
+
+.hero-nav-brand-text {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.45rem;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.hero-nav-links {
+  display: none;
+  align-items: center;
+  gap: 2.75rem;
+}
+
+@media (min-width: 768px) {
+  .hero-nav-links {
+    display: flex;
+  }
+}
+
+.hero-nav-link {
+  position: relative;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #94A3B8;
+  text-decoration: none;
+  padding: 0.35rem 0;
+  transition: color 0.2s ease;
+}
+
+.hero-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-nav-link:hover {
+  color: #ffffff;
+}
+
+.hero-nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.hero-nav-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Register Button: Simply White with Black Font (Apple iOS Style) */
+.hero-nav-right .island-register-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 1.35rem;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: #000000 !important;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 12px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition:
+    transform 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+  will-change: transform;
+}
+
+.hero-nav-right .island-register-btn:hover {
+  transform: translateY(-1px) scale(1.03);
+  background: #ffffff;
+  color: #000000 !important;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+}
+
+.hero-nav-right .island-register-btn:active {
+  transform: scale(0.95);
+}
+
+.hero-nav-mobile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-size: 1.15rem;
+  cursor: pointer;
+  margin-left: 0.75rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-nav-mobile-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.hero-nav-mobile-btn:active {
+  transform: scale(0.92);
+}
+
+@media (min-width: 768px) {
+  .hero-nav-mobile-btn {
+    display: none;
+  }
+}
+
+.hero-nav-date {
+  display: none;
+}
+
+/* =========================================================
+   2. HERO MAIN CONTAINER & GRID
+   ========================================================= */
+.hero-main-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-main-container {
+    padding: 3rem 3rem 4.5rem;
+  }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 3.5rem;
+  }
+}
+
+/* LEFT COLUMN */
+.hero-content-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* SLEEK GLASSMORPHISM PILL BADGE WITH OVERHEAD SPECULAR LIGHTING */
+.hero-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.48rem 1.35rem;
+  border-radius: 9999px; /* Pill shaped */
+  /* Subtle brighter shade at the top so it feels like light is falling on it from above */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.05) 45%,
+    rgba(10, 14, 22, 0.72) 100%
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-top-color: rgba(255, 255, 255, 0.38); /* Overhead light reflection on top rim */
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.45), /* Direct overhead light rim */
+    inset 0 6px 12px -2px rgba(255, 255, 255, 0.09), /* Top illumination gradient */
+    0 6px 20px -2px rgba(0, 0, 0, 0.55);
+  margin-bottom: 2rem;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform, opacity, filter;
+}
+
+.hero-primed .hero-eyebrow-pill {
+  opacity: 0;
+  transform: translateY(16px) scale(0.96);
+  filter: blur(8px);
+}
+
+.hero-loaded .hero-eyebrow-pill {
+  animation: ios-blur-fade-up 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.18s forwards;
+}
+
+.hero-eyebrow-pill:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(12, 16, 26, 0.8) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.22);
+  border-top-color: rgba(255, 255, 255, 0.52);
+  box-shadow:
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.6),
+    inset 0 8px 16px -2px rgba(255, 255, 255, 0.14),
+    0 8px 24px -2px rgba(0, 0, 0, 0.65);
+  transform: translateY(-1px);
+}
+
+.hero-eyebrow-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff !important;
+}
+
+.hero-eyebrow-sep {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.hero-eyebrow-edition {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff !important;
+}
+
+/* 1-LINE HEADLINE (INSTRUMENT SERIF) — EDITORIAL SCALE */
+.hero-headline {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(3.8rem, 8.8vw, 8.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem 0;
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+  gap: clamp(0.35rem, 0.75vw, 0.75rem); /* Tight natural spacing between words */
+  width: 100%;
+  will-change: transform, opacity, filter;
+}
+
+.hero-primed .hero-headline {
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  filter: blur(16px);
+}
+
+.hero-loaded .hero-headline {
+  animation: ios-blur-fade-up 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.32s forwards;
+}
+
+.hero-hl-white {
+  color: #ffffff;
+}
+
+.hero-hl-teal {
+  font-style: italic;
+  background: linear-gradient(180deg, #094a59 0%, #1494B4 45%, #5ce8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding-right: 0.08em;
+  filter: drop-shadow(0 4px 18px rgba(20, 148, 180, 0.35));
+}
+
+/* TAGLINE (DM SANS) */
+.hero-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+  font-weight: 500;
+  color: #e2e8f0;
+  letter-spacing: -0.01em;
+  margin: 0 0 2.25rem 0;
+  line-height: 1.45;
+  max-width: 48ch;
+  will-change: transform, opacity, filter;
+}
+
+.hero-primed .hero-tagline {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(10px);
+}
+
+.hero-loaded .hero-tagline {
+  animation: ios-blur-fade-up 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.46s forwards;
+}
+
+/* =========================================================
+   iOS STYLE HERO CTA BUTTON GROUP (SLEEK & COMPACT)
+   ========================================================= */
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  will-change: transform, opacity, filter;
+}
+
+.hero-primed .hero-cta-group {
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+  filter: blur(8px);
+}
+
+.hero-loaded .hero-cta-group {
+  animation: ios-spring-up 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) 0.58s forwards;
+}
+
+/* Primary iOS Action Button (Compact, Sleek Pill) */
+.hero-btn-primary,
+.hero-btn-explore {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.52rem 1.35rem; /* Smaller sleek sizing */
+  border-radius: 9999px;
+  background: #1494B4;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 4px 14px -2px rgba(20, 148, 180, 0.45),
+    inset 0 1px 0.5px 0 rgba(255, 255, 255, 0.4);
+  transition:
+    transform 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+    box-shadow 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+    background-color 0.2s ease;
+  will-change: transform;
+}
+
+.hero-btn-primary:hover,
+.hero-btn-explore:hover {
+  transform: translateY(-1px);
+  background: #18a9cd;
+  box-shadow:
+    0 8px 20px -2px rgba(20, 148, 180, 0.65),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.hero-btn-primary:active,
+.hero-btn-explore:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 8px -1px rgba(20, 148, 180, 0.4);
+}
+
+.hero-btn-arrow {
+  font-size: 0.82rem;
+  line-height: 1;
+  transition: transform 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.hero-btn-primary:hover .hero-btn-arrow {
+  transform: translateX(3px);
+}
+
+/* Secondary iOS Button (Compact Frosted Glass Pill) */
+.hero-btn-secondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.52rem 1.25rem; /* Smaller sleek sizing */
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #F8FAFC;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  text-decoration: none;
+  box-shadow:
+    0 4px 12px -2px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0.5px 0 rgba(255, 255, 255, 0.18);
+  transition:
+    transform 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  will-change: transform;
+}
+
+.hero-btn-secondary:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(255, 255, 255, 0.26);
+  box-shadow:
+    0 6px 18px -2px rgba(0, 0, 0, 0.55),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.26);
+}
+
+.hero-btn-secondary:active {
+  transform: scale(0.96);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================================
+   3. RIGHT COLUMN: STEAM WHEEL STAGE + iOS WIDGETS
+   ========================================================= */
+.hero-wheel-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.hero-wheel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 470px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+/* Ambient glow centered directly behind the circular wheel */
+.hero-wheel-ambient {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20, 148, 180, 0.26) 0%, rgba(20, 148, 180, 0.06) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Wheel Artwork with Load Rotation Animation */
+.hero-wheel-image {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 0 !important; /* DONT CURVE LOGOS */
+  filter: drop-shadow(0 20px 42px rgba(0, 0, 0, 0.7));
+  transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+  will-change: transform, opacity, filter;
+}
+
+.hero-wheel-wrapper:hover .hero-wheel-image {
+  transform: scale(1.025);
+}
+
+/* Primed State before Page Loader completes */
+.hero-primed .hero-wheel-image {
+  opacity: 0;
+  transform: rotate(-180deg) scale(0.72);
+  filter: blur(14px);
+}
+
+/* On-load rotation physics triggered when loader finishes */
+.hero-loaded .wheel-animate-load {
+  animation: wheel-entrance-rotate 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.22s forwards;
+  transform-origin: center center;
+}
+
+@keyframes wheel-entrance-rotate {
+  0% {
+    transform: rotate(-180deg) scale(0.72);
+    opacity: 0;
+    filter: blur(12px);
+  }
+  65% {
+    transform: rotate(12deg) scale(1.025);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  85% {
+    transform: rotate(-3deg) scale(0.995);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* =========================================================
+   iOS STYLE FLOATING GLASS WIDGETS
+   ========================================================= */
+.hero-ios-widget {
+  position: absolute;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  padding: 8px 15px 8px 10px;
+  border-radius: 16px;
+  background: rgba(10, 16, 26, 0.78);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 14px 34px -6px rgba(0, 0, 0, 0.75),
+    0 0 16px rgba(20, 148, 180, 0.08),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition:
+    transform 0.3s cubic-bezier(0.32, 0.72, 0, 1),
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.3s ease;
+  will-change: transform, opacity, filter;
+}
+
+.hero-primed .hero-ios-widget {
+  opacity: 0;
+  transform: scale(0.55) translateY(24px);
+  filter: blur(8px);
+}
+
+.hero-ios-widget:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: rgba(14, 22, 34, 0.92);
+  border-color: rgba(255, 255, 255, 0.32);
+  box-shadow:
+    0 20px 42px -6px rgba(0, 0, 0, 0.85),
+    0 0 24px rgba(20, 148, 180, 0.2),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.4);
+}
+
+.hero-ios-widget:active {
+  transform: scale(0.95);
+}
+
+/* Icon Squircle (iOS App Icon Container) */
+.widget-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.box-biomimicry {
+  background: rgba(12, 16, 26, 0.72);
+  color: var(--ody-sand);
+  border: 1px solid rgba(245, 214, 186, 0.28);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.box-math {
+  background: rgba(12, 16, 26, 0.72);
+  color: var(--ody-coral);
+  border: 1px solid rgba(211, 78, 63, 0.28);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.box-robotics {
+  background: rgba(12, 16, 26, 0.72);
+  color: var(--ody-teal-bright);
+  border: 1px solid rgba(20, 148, 180, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+/* Typography Column */
+.widget-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.widget-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #F8FAFC;
+  line-height: 1.2;
+}
+
+.widget-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #94A3B8;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/* Live Status Indicator */
+.widget-indicator {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-left: 4px;
+  flex-shrink: 0;
+}
+
+.ind-biomimicry {
+  background: var(--ody-sand);
+  box-shadow: 0 0 8px rgba(245, 214, 186, 0.85);
+}
+
+.ind-math {
+  background: var(--ody-coral);
+  box-shadow: 0 0 8px rgba(211, 78, 63, 0.85);
+}
+
+.ind-robotics {
+  background: var(--ody-teal-bright);
+  box-shadow: 0 0 8px rgba(28, 181, 219, 0.95);
+}
+
+/* Ergonomic Balanced Placement Around Wheel (Robotics moved well above ODYSSEY) */
+.widget-biomimicry {
+  top: 6%;
+  left: -28px;
+}
+
+.hero-loaded .widget-biomimicry {
+  animation:
+    widget-spring-in 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) 0.48s forwards,
+    widget-float-a 6.5s ease-in-out infinite 1.35s;
+}
+
+.widget-math {
+  top: 38%;
+  right: -36px;
+}
+
+.hero-loaded .widget-math {
+  animation:
+    widget-spring-in 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) 0.66s forwards,
+    widget-float-b 7.5s ease-in-out infinite 1.52s;
+}
+
+.widget-robotics {
+  bottom: 24%;
+  left: -32px; /* Lifted up cleanly to avoid overlapping ODYSSEY */
+}
+
+.hero-loaded .widget-robotics {
+  animation:
+    widget-spring-in 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) 0.84s forwards,
+    widget-float-c 7s ease-in-out infinite 1.7s;
+}
+
+/* Entrance Spring Keyframes */
+@keyframes widget-spring-in {
+  0% {
+    transform: scale(0.55) translateY(24px);
+    opacity: 0;
+    filter: blur(8px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Organic Floating Animations */
+@keyframes widget-float-a {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-0.8deg);
+  }
+}
+
+@keyframes widget-float-b {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(0.8deg);
+  }
+}
+
+@keyframes widget-float-c {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(-0.5deg);
+  }
+}
+
+/* iOS Blur Fade Up & Spring Entrance Animations */
+@keyframes ios-blur-fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+    filter: blur(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes ios-fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes ios-spring-up {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.94);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* =========================================================
+   4. RESPONSIVE BREAKPOINTS
+   ========================================================= */
+@media (max-width: 640px) {
+  .hero-nav {
+    padding: 1.25rem 1rem 0.5rem;
+  }
+
+  .hero-nav-brand-text {
+    font-size: 1.15rem;
+  }
+
+  .hero-main-container {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .hero-eyebrow-pill {
+    padding: 0.4rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-eyebrow-text,
+  .hero-eyebrow-edition {
+    font-size: 0.7rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.95rem, 9.6vw, 3.8rem);
+    white-space: nowrap;
+  }
+
+  .hero-wheel-wrapper {
+    max-width: 340px;
+    padding: 1rem;
+  }
+
+  .hero-ios-widget {
+    padding: 6px 11px 6px 8px;
+    gap: 8px;
+    border-radius: 12px;
+  }
+
+  .widget-icon-box {
+    width: 26px;
+    height: 26px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+
+  .widget-title {
+    font-size: 0.66rem;
+  }
+
+  .widget-subtitle {
+    display: none;
+  }
+
+  .widget-biomimicry {
+    left: -8px;
+    top: 2%;
+  }
+
+  .widget-math {
+    right: -10px;
+    top: 40%;
+  }
+
+  .widget-robotics {
+    left: -8px;
+    bottom: 22%;
+  }
+}

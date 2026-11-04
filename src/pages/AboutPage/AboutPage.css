@@ -1,0 +1,15 @@
+/* =========================================================
+   ABOUT PAGE ROOT STYLES
+   - Smooth vertical flow
+   - Dark Obsidian Base (#030508)
+   ========================================================= */
+
+.about-page-main {
+  position: relative;
+  background-color: #030508;
+  color: #cbd5e1;
+  min-height: 100vh;
+  overflow-x: hidden;
+  z-index: 5;
+}
+

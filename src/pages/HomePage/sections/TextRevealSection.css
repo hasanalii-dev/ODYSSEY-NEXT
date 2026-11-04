@@ -1,0 +1,107 @@
+/* =========================================================
+   TEXT REVEAL SECTION (ONLY TEXT, NOTHING ELSE)
+   One-time iOS blur-fade scroll reveal animation
+   ========================================================= */
+
+.text-reveal-root {
+  position: relative;
+  width: 100%;
+  background-color: #05070a;
+  padding: 8rem 1.5rem 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .text-reveal-root {
+    padding: 11rem 3rem 13rem;
+  }
+}
+
+.text-reveal-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* Base Paragraph Typography */
+.text-reveal-para {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.75rem, 3.2vw, 2.85rem);
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.text-reveal-para-secondary {
+  margin-top: 3.5rem;
+  font-weight: 500;
+  font-size: clamp(1.35rem, 2.2vw, 1.95rem);
+  line-height: 1.55;
+  letter-spacing: -0.015em;
+}
+
+@media (max-width: 640px) {
+  .text-reveal-para-secondary {
+    margin-top: 2.25rem;
+  }
+}
+
+/* Word-by-word reveal: GUARANTEED SPACING via margin-right */
+.text-word {
+  display: inline-block;
+  margin-right: 0.32em; /* Ensures crystal-clear separation between words */
+  vertical-align: baseline;
+  opacity: 0.16;
+  filter: blur(10px);
+  transform: translateY(12px);
+  color: rgba(255, 255, 255, 0.4);
+  will-change: opacity, filter, transform, color;
+}
+
+/* One-time iOS blur-fade reveal when scrolled into view */
+.text-word.revealed {
+  animation: ios-word-blur-in 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--word-delay, 0ms);
+}
+
+.text-word.revealed.highlight {
+  animation: ios-word-highlight-in 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--word-delay, 0ms);
+}
+
+@keyframes ios-word-blur-in {
+  0% {
+    opacity: 0.16;
+    filter: blur(10px);
+    transform: translateY(12px);
+    color: rgba(255, 255, 255, 0.25);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.18);
+  }
+}
+
+@keyframes ios-word-highlight-in {
+  0% {
+    opacity: 0.16;
+    filter: blur(10px);
+    transform: translateY(12px);
+    color: rgba(20, 148, 180, 0.25);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+    color: #1494B4;
+    text-shadow: 0 0 28px rgba(20, 148, 180, 0.45);
+  }
+}

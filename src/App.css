@@ -1,0 +1,7 @@
+.odyssey-app {
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--color-night);
+  color: var(--text-secondary);
+  overflow-x: hidden;
+}

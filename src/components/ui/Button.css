@@ -1,0 +1,95 @@
+.ody-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+  outline: none;
+  user-select: none;
+  text-decoration: none;
+}
+
+.ody-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.ody-btn--sm {
+  padding: 0.45rem 1rem;
+  font-size: 0.825rem;
+}
+
+.ody-btn--md {
+  padding: 0.65rem 1.4rem;
+  font-size: 0.925rem;
+}
+
+.ody-btn--lg {
+  padding: 0.85rem 1.85rem;
+  font-size: 1.05rem;
+}
+
+.ody-btn--full {
+  width: 100%;
+}
+
+/* Primary Neon Gradient */
+.ody-btn--primary {
+  background: var(--grad-primary);
+  color: #040711;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.35);
+}
+
+.ody-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.5);
+  filter: brightness(1.08);
+}
+
+.ody-btn--primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary Glass Button */
+.ody-btn--secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+  backdrop-filter: blur(8px);
+}
+
+.ody-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Glow Outline Button */
+.ody-btn--outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.15);
+}
+
+.ody-btn--outline:hover {
+  background: rgba(56, 189, 248, 0.1);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Ghost Button */
+.ody-btn--ghost {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.ody-btn--ghost:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
+}
