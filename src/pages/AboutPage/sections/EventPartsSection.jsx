@@ -63,7 +63,7 @@ export const EventPartsSection = () => {
               <div className="event-part-parallax-box">
                 <img
                   ref={parallaxImgRef1}
-                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80"
+                  src="https://scontent.fkhi11-2.fna.fbcdn.net/v/t39.30808-6/487553805_1107127638101868_4048418912339009535_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_ohc=LVW8RjulnP4Q7kNvwE3wg1G&_nc_oc=Ado7QtNUplrNZvSPDopddEmvmxWSUx89w8e7jUNImmes2DuKcfjIFvAhefa7HMjmm2o&_nc_zt=23&_nc_ht=scontent.fkhi11-2.fna&_nc_gid=RYAZ3sStmpttEPy2ZHl4hw&_nc_ss=7b2a8&oh=00_AQRymq6v-ym0_o6NyNNZnlD45tdzsuHmVwDLQNrAaqhi4Q&oe=6AF91E38"
                   alt="Student Project Exhibition"
                   className="event-part-parallax-img"
                 />
@@ -120,7 +120,7 @@ export const EventPartsSection = () => {
               <div className="event-part-parallax-box">
                 <img
                   ref={parallaxImgRef2}
-                  src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80"
+                  src="https://scontent.fkhi11-2.fna.fbcdn.net/v/t39.30808-6/487793744_1107127968101835_8863822752964392907_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_ohc=lCL5Izur_4IQ7kNvwGepwGj&_nc_oc=AdromCoo37MjlxNUB_uxyofT5l2U09row2O8VoSUiZCfqQ4IlniUmrg2B-Lkv8hEviE&_nc_zt=23&_nc_ht=scontent.fkhi11-2.fna&_nc_gid=6lHMyiQvgEmi7Jv11QPGqg&_nc_ss=7b2a8&oh=00_AQTjmHX40559xxWCorM2zE6ft300ZIJkK_TUfZ9oNY0TQw&oe=6AF91773"
                   alt="Students participating in team engineering challenges"
                   className="event-part-parallax-img"
                 />

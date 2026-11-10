@@ -101,12 +101,6 @@ export const SteamscapeSection = () => {
                         <strong>Model Fabrication:</strong> Construction of safe, working, physical models demonstrating functional mechanics or digital automation.
                       </div>
                     </div>
-                    <div className="dossier-stage-row">
-                      <span className="dossier-stage-tag">JUDGING</span>
-                      <div className="dossier-stage-text">
-                        <strong>Evaluation Criteria:</strong> Problem clarity (25%), STEAM integration (30%), Model functionality &amp; durability (25%), Presentation &amp; defense (20%).
-                      </div>
-                    </div>
                   </div>
                 </motion.div>
               )}

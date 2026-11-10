@@ -223,7 +223,7 @@ export const AboutHeroSection = ({ onOpenMenu }) => {
             <div className="about-parallax-container">
               <img
                 ref={parallaxImgRef}
-                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=80"
+                src="https://scontent.fkhi11-1.fna.fbcdn.net/v/t39.30808-6/487758518_1107127648101867_6285843284761430893_n.jpg?stp=dst-jpg_tt6&cstp=mx1523x2048&ctp=s1523x2048&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_ohc=VSLcOoaE69MQ7kNvwGGJKch&_nc_oc=AdrO9M6EBMT1Ir0fE6WEdDNgjmrGLFsRxhgfKKg5TrvsAFZNyXGkBtz2gheOXhIuIO4&_nc_zt=23&_nc_ht=scontent.fkhi11-1.fna&_nc_gid=4vsqQivI-vY5OJvprxk8Gw&_nc_ss=7b2a8&oh=00_AQStjKDaFRsxTVzTbWYbdN7fL5OUUQ9oeURiFS01fubKUg&oe=6AF91715"
                 alt="Odyssey 2027 STEAM Innovation"
                 className="about-parallax-img"
               />

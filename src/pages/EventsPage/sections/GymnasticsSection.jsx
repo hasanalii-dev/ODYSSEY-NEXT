@@ -102,12 +102,6 @@ export const GymnasticsSection = () => {
                         <strong>Floor Performance:</strong> Routines conducted on certified gymnastics floor under coach supervision with age-appropriate acrobatic elevations and formations.
                       </div>
                     </div>
-                    <div className="dossier-stage-row">
-                      <span className="dossier-stage-tag">SCORING</span>
-                      <div className="dossier-stage-text">
-                        <strong>Adjudication:</strong> Narrative clarity (30%), synchronization &amp; teamwork (30%), athletic execution (20%), artistic musicality (20%).
-                      </div>
-                    </div>
                   </div>
                 </motion.div>
               )}

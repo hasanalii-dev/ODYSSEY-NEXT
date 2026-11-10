@@ -23,7 +23,7 @@ export const AboutOverviewSection = () => {
             <div className="about-overview-parallax-box">
               <img
                 ref={parallaxImgRef}
-                src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80"
+                src="https://scontent.fkhi6-1.fna.fbcdn.net/v/t39.30808-6/487519314_1107127994768499_3461325318965772925_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_ohc=Kc8fhGW9ZkIQ7kNvwHVqKBZ&_nc_oc=Adp3ELZ9gE-FakCAWQ33ZQdERrt24pMMEy2HYw6d64nTCM5YYVvSY_zLMOXt0M7EY0U&_nc_zt=23&_nc_ht=scontent.fkhi6-1.fna&_nc_gid=I7V5v8lY6Klr_hFLbQeBwA&_nc_ss=7b2a8&oh=00_AQSt5jcnJ0hls6-Tmtq5pA9bbAJL6A7NtNjGGRe3pIXvLA&oe=6AF8F929"
                 alt="Student inventing prototype in laboratory"
                 className="about-overview-img"
               />

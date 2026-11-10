@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Download, FileText, Store } from 'lucide-react';
+import { ExternalLink, Download, FileText, Users } from 'lucide-react';
 import { triggerHaptic } from '../../../utils/haptics';
 import { navigateTo } from '../../../utils/navigation';
 import { CardSpaceStarfield } from '../../../components/ui';
@@ -224,15 +224,15 @@ export const ApplicationHeroSection = ({ onOpenMenu }) => {
             </a>
 
             <a
-              href="https://forms.gle/PtY3zXrERCyYkw8Z6"
+              href="https://forms.gle/oXR65aNEx2ZjSJsF9"
               target="_blank"
               rel="noopener noreferrer"
-              className="app-cta-vendor"
-              onClick={() => triggerHaptic('selection')}
-              title="External Vendor Registration Form"
+              className="app-cta-external"
+              onClick={() => triggerHaptic('pop')}
+              title="Prototype Quest for External Participants"
             >
-              <Store size={15} />
-              <span>Vendor Form</span>
+              <Users size={15} />
+              <span>External Form</span>
             </a>
           </div>
         </motion.div>

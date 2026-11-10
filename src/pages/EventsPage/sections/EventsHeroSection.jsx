@@ -235,12 +235,6 @@ export const EventsHeroSection = ({ onOpenMenu }) => {
               Gymnastics
             </button>
             <button
-              onClick={() => scrollToSection('art-competition')}
-              className="events-jump-pill"
-            >
-              Art Competition
-            </button>
-            <button
               onClick={() => scrollToSection('pure-bazaar')}
               className="events-jump-pill"
             >

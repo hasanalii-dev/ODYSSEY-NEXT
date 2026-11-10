@@ -25,7 +25,7 @@ export const ApplicationPage = ({ onOpenMenu }) => {
       {/* Section 3: Proposal Template (.DOCX Download) */}
       <ProposalTemplateSection />
 
-      {/* Section 2: Application Form (Student Form + Vendor Form) */}
+      {/* Section 2: Application Form (Internal Student Form + External Participant Form) */}
       <ApplicationFormSection />
 
       {/* Section 5: Ethos Closing Statement */}

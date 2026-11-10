@@ -5,7 +5,6 @@ import {
   PrototypeQuestSection,
   PhotographySection,
   GymnasticsSection,
-  ArtCompetitionSection,
   PureBazaarSection,
   OtherHighlightsSection,
 } from './sections';
@@ -34,13 +33,10 @@ export const EventsPage = ({ onOpenMenu }) => {
       {/* Section 5: Gymnastics Display: The Big Fix Through Movement */}
       <GymnasticsSection />
 
-      {/* Section 6: Art Competition: See the Problem. Imagine the Possibility */}
-      <ArtCompetitionSection />
-
-      {/* Section 7: Pure Bazaar: Student Entrepreneurship */}
+      {/* Section 6: Pure Bazaar: Student Entrepreneurship */}
       <PureBazaarSection />
 
-      {/* Section 8: Other Event Highlights & Implementation Note */}
+      {/* Section 7: Other Event Highlights & Implementation Note */}
       <OtherHighlightsSection />
     </main>
   );

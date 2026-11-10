@@ -167,7 +167,7 @@ export const TheBigFixSection = () => {
               <div className="big-fix-parallax-box">
                 <img
                   ref={imgRef1}
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                  src="https://scontent.fkhi11-2.fna.fbcdn.net/v/t39.30808-6/487769142_1107127921435173_6078268032149726610_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_ohc=PfDGcaAnTU8Q7kNvwHE8HSX&_nc_oc=AdoVFJVfKkaG-hQO1WIealkJp43EZnxffwtqjImecgE6zJkQFS7fqqnz_92XTwhCWUU&_nc_zt=23&_nc_ht=scontent.fkhi11-2.fna&_nc_gid=RSayBlILr40EA8drlHGwUw&_nc_ss=7b2a8&oh=00_AQRVXlyeAWqqqodJbiZ7VfKOsk8oa1MakMdBK2UTHfPBVQ&oe=6AF91CF2"
                   alt="Young engineers collaborating and problem solving"
                   className="big-fix-parallax-img"
                 />
@@ -184,7 +184,7 @@ export const TheBigFixSection = () => {
               <div className="big-fix-parallax-box">
                 <img
                   ref={imgRef2}
-                  src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=800&q=80"
+                  src="https://scontent.fkhi6-2.fna.fbcdn.net/v/t39.30808-6/487542115_1107127944768504_3941264642126644960_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_ohc=zaZbXQgyMngQ7kNvwG6hPO1&_nc_oc=Ado9s7x3vRxRyEPIJmA64aRObb_4vz5Mow2X-RJ-RhCmmOjy1L8UiALJuA47jEXHflA&_nc_zt=23&_nc_ht=scontent.fkhi6-2.fna&_nc_gid=A5hcGF852kzHZJWMUxycKw&_nc_ss=7b2a8&oh=00_AQSO5NI5WrR1Xmfx4LLOf3EGtA8GFhrxwwlyF8aj1prLJA&oe=6AF92955"
                   alt="Creative science and technology experiments"
                   className="big-fix-parallax-img"
                 />

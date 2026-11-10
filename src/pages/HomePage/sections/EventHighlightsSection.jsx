@@ -4,7 +4,6 @@ import {
   Atom,
   Boxes,
   Camera,
-  Palette,
   Activity,
   Store,
   Microscope,
@@ -44,15 +43,6 @@ const HIGHLIGHTS_DATA = [
   },
   {
     num: '04',
-    title: 'See the Problem. Imagine the Possibility',
-    subtitle: 'Art Competition',
-    description:
-      'Students explore a problem and create/draw a mood board showing their solution.',
-    accentColor: '#F5D6BA',
-    Icon: Palette,
-  },
-  {
-    num: '05',
     title: 'Problem to Solution',
     subtitle: 'Gymnastics Display',
     description: 'The Big Fix Through Movement',
@@ -60,7 +50,7 @@ const HIGHLIGHTS_DATA = [
     Icon: Activity,
   },
   {
-    num: '06',
+    num: '05',
     title: 'Pure bazaar',
     subtitle: 'Student Marketplace',
     description:
@@ -69,7 +59,7 @@ const HIGHLIGHTS_DATA = [
     Icon: Store,
   },
   {
-    num: '07',
+    num: '06',
     title: "NEXTER'S LABORATORY",
     subtitle: 'Hands-On Science Lab',
     description:
@@ -78,7 +68,7 @@ const HIGHLIGHTS_DATA = [
     Icon: Microscope,
   },
   {
-    num: '08',
+    num: '07',
     title: 'Psych it out',
     subtitle: 'Interactive Psychology',
     description: "What if the problem isn't the problem?",
@@ -86,7 +76,7 @@ const HIGHLIGHTS_DATA = [
     Icon: Brain,
   },
   {
-    num: '09',
+    num: '08',
     title: 'Food Area',
     subtitle: 'Community Dining & Vendors',
     description:
@@ -215,7 +205,7 @@ export const EventHighlightsSection = () => {
 
           {/* Pill with dark glassmorphism */}
           <div className="highlights-count-pill">
-            <span>9 Flagship Experiences</span>
+            <span>8 Flagship Experiences</span>
           </div>
         </div>
 

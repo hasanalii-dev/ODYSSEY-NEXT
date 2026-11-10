@@ -101,7 +101,7 @@ export const WelcomeOutroSection = () => {
               <div className="welcome-outro-parallax-box">
                 <img
                   ref={parallaxImgRef}
-                  src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
+                  src="https://scontent.fkhi11-2.fna.fbcdn.net/v/t39.30808-6/488208814_1107127734768525_6223421835978815888_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1667&ctp=s2048x1667&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_ohc=I3b9zIhDeNgQ7kNvwHBY9AF&_nc_oc=AdrUhlD2lAXXjYcBeTR83g_gn-KB6joXtwd5qhZ4NUHzGOuRZCkO3BwvwrnVFxmTFVw&_nc_zt=23&_nc_ht=scontent.fkhi11-2.fna&_nc_gid=IynYUbXlk1l3GmDV3RwYAQ&_nc_ss=7b2a8&oh=00_AQQ9izSsp-P2CAMzUH3m7q8QrPLWEYBV9JcV0khGfafnlg&oe=6AF90C26"
                   alt="Future technology and possibilities"
                   className="welcome-outro-parallax-img"
                 />

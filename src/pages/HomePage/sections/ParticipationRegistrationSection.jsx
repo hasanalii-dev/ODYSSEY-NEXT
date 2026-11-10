@@ -60,10 +60,11 @@ export const ParticipationRegistrationSection = () => {
         </div>
 
         {/* =========================================================
-            2. THREE PARTICIPATION CARDS (iOS Frosted Black + 3 Sine Wave Gradients)
-            Card 1: Blue Wave Gradient
-            Card 2: Red Wave Gradient
-            Card 3: Orange Wave Gradient
+            2. FOUR PARTICIPATION CARDS (iOS Frosted Black + 3 Sine Wave Gradients)
+            Card 1: Blue Wave Gradient (Campuses)
+            Card 2: Red Wave Gradient (Donation Drive - Box 1)
+            Card 3: Red-Orange Wave Gradient (Prototype Quest - Box 2)
+            Card 4: Orange Wave Gradient (Fraternity Welcome)
             ========================================================= */}
         <div className="participation-cards-grid">
           {/* Point 1: Next Schools STEAM Exhibit (BLUE Wave Gradient + Space Theme) */}
@@ -124,7 +125,7 @@ export const ParticipationRegistrationSection = () => {
             </div>
           </div>
 
-          {/* Point 2: 100% Free Registration (RED Wave Gradient + Space Theme) */}
+          {/* Point 2: Donation Drive (Box 1: PKR 200 per person) */}
           <div className="participation-card part-card-red">
             {/* Space Theme Starfield with Dots Twinkling in Light */}
             <CardSpaceStarfield variant="crimson" />
@@ -161,28 +162,92 @@ export const ParticipationRegistrationSection = () => {
               <div>
                 <div className="participation-card-top">
                   <div className="participation-icon-box" aria-hidden="true">
-                    <i className="bi bi-ticket-perforated"></i>
+                    <i className="bi bi-heart-fill"></i>
                   </div>
-                  <span className="participation-badge-pill">Free Entry</span>
+                  <span className="participation-badge-pill">Donation Drive</span>
                 </div>
 
                 <div className="participation-card-body">
-                  <h3 className="participation-card-title">Zero Fee Policy</h3>
+                  <h3 className="participation-card-title">Donation Drive</h3>
+                  <div className="participation-fee-tag">
+                    PKR 200 <span>/ person</span>
+                  </div>
                   <p className="participation-card-bullet">
-                    No registration fee is to be charged for anyone participating or attending the event.
+                    Entry Fee: PKR 200 per person. Amount collected will be used for donation purposes.
                   </p>
                 </div>
               </div>
 
               <div className="participation-card-footer">
                 <span className="participation-footer-pill">
-                  <i className="bi bi-shield-check" aria-hidden="true"></i> 100% Free Access
+                  <i className="bi bi-heart" aria-hidden="true"></i> Charitable Cause
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Point 3: Open to Everyone (ORANGE Wave Gradient + Space Theme) */}
+          {/* Point 3: Prototype Quest Registration Fee (Box 2: PKR 8,000/-) */}
+          <div className="participation-card part-card-red">
+            {/* Space Theme Starfield with Dots Twinkling in Light */}
+            <CardSpaceStarfield variant="crimson" />
+
+            {/* Wave Gradient Layer: 3 sine waves with same amplitude, different Y, blurred */}
+            <div className="part-wave-bg" aria-hidden="true">
+              <svg
+                viewBox="0 0 800 450"
+                preserveAspectRatio="none"
+                className="part-wave-svg"
+              >
+                {/* Top Wave: Darker Crimson */}
+                <path
+                  d="M 0,110 C 130,60 270,160 400,110 C 530,60 670,160 800,110 L 800,450 L 0,450 Z"
+                  fill="#7f1d1d"
+                  opacity="0.95"
+                />
+                {/* Middle Wave: Warm Odyssey Red-Orange */}
+                <path
+                  d="M 0,195 C 130,145 270,245 400,195 C 530,145 670,245 800,195 L 800,450 L 0,450 Z"
+                  fill="#ea580c"
+                  opacity="0.95"
+                />
+                {/* Bottom Wave: White */}
+                <path
+                  d="M 0,285 C 130,235 270,335 400,285 C 530,235 670,335 800,285 L 800,450 L 0,450 Z"
+                  fill="#ffffff"
+                  opacity="0.85"
+                />
+              </svg>
+            </div>
+
+            <div className="participation-card-content">
+              <div>
+                <div className="participation-card-top">
+                  <div className="participation-icon-box" aria-hidden="true">
+                    <i className="bi bi-cpu"></i>
+                  </div>
+                  <span className="participation-badge-pill">Prototype Quest</span>
+                </div>
+
+                <div className="participation-card-body">
+                  <h3 className="participation-card-title">Prototype Quest</h3>
+                  <div className="participation-fee-tag">
+                    PKR 8,000/- <span>REGISTRATION FEE</span>
+                  </div>
+                  <p className="participation-card-bullet">
+                    Registration Fee: PKR 8,000/- clearly designated for Prototype Quest participants.
+                  </p>
+                </div>
+              </div>
+
+              <div className="participation-card-footer">
+                <span className="participation-footer-pill">
+                  <i className="bi bi-trophy" aria-hidden="true"></i> Participant Fee
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Point 4: Open to Everyone (ORANGE Wave Gradient + Space Theme) */}
           <div className="participation-card part-card-orange">
             {/* Space Theme Starfield with Dots Twinkling in Light */}
             <CardSpaceStarfield variant="orange" />
@@ -227,7 +292,7 @@ export const ParticipationRegistrationSection = () => {
                 <div className="participation-card-body">
                   <h3 className="participation-card-title">Fraternity Welcome</h3>
                   <p className="participation-card-bullet">
-                    Attendees: Open to everyone, including parents and siblings of The Next School fraternity (students and faculty)
+                    Open to everyone, including parents and siblings of The Next School fraternity.
                   </p>
                 </div>
               </div>
