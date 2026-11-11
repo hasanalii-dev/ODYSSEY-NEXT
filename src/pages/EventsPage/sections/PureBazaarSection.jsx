@@ -118,7 +118,7 @@ export const PureBazaarSection = () => {
               <div className="event-flow-parallax-box">
                 <img
                   ref={parallaxImgRef}
-                  src="https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=900&q=80"
+                  src="https://scontent.fkhi11-1.fna.fbcdn.net/v/t39.30808-6/487461277_1107127624768536_2956459387362441883_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_ohc=pmPe3bRqA_8Q7kNvwHINUxB&_nc_oc=Adp899HqPuOpAIlalgYxZ2uUWpRuwjba_URZCBviIO2ylXseyjP9JWehBVV2Qo7Ko9A&_nc_zt=23&_nc_ht=scontent.fkhi11-1.fna&_nc_gid=i59pJXu5AIUg1e8TqhRoCg&_nc_ss=7b2a8&oh=00_AQQfa2p8HRqdhaDUYxd9bJ1iiVe1CwTn0ReMts7IPYDTLQ&oe=6AF92547"
                   alt="Student entrepreneurship booth presenting handcrafted and engineered products"
                   className="event-flow-parallax-img"
                 />

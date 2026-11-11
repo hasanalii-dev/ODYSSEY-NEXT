@@ -120,7 +120,7 @@ export const GymnasticsSection = () => {
               <div className="event-flow-parallax-box">
                 <img
                   ref={parallaxImgRef}
-                  src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80"
+                  src="https://scontent.fkhi6-2.fna.fbcdn.net/v/t39.30808-6/489821629_1118720280275937_8980780179462825109_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1392&ctp=s2048x1392&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_ohc=1ldx093ZeH8Q7kNvwHlpnA1&_nc_oc=AdpAfq1Itospd5Ihgckh5R6lSb5HP-pLEsGP0Sj5hSohuGSVAHwMTqrwzhirpndcgp8&_nc_zt=23&_nc_ht=scontent.fkhi6-2.fna&_nc_gid=2VSFSXdrgfEvkW7_n2VZXw&_nc_ss=7b2a8&oh=00_AQTfznR4wcJfTELg7ICdxbDpxuKuHxvRJkzo3m9WH1aRBQ&oe=6AFA5E4A"
                   alt="Gymnastics display embodying balance, agility, and teamwork"
                   className="event-flow-parallax-img"
                 />
@@ -128,7 +128,7 @@ export const GymnasticsSection = () => {
               </div>
               <div className="event-flow-frame-border" aria-hidden="true" />
               <div className="event-flow-caption">
-                <span>GYMNASTICS // MOVEMENT IN MOTION</span>
+                <span>MOVEMENT IN MOTION</span>
               </div>
             </div>
           </motion.div>

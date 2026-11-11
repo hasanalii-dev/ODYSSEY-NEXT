@@ -119,7 +119,7 @@ export const SteamscapeSection = () => {
               <div className="event-flow-parallax-box">
                 <img
                   ref={parallaxImgRef}
-                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80"
+                  src="https://scontent.fkhi6-1.fna.fbcdn.net/v/t39.30808-6/487493598_1107128458101786_8580945477984565311_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_ohc=G5s58MBB2eAQ7kNvwEyHIyu&_nc_oc=Adqe81SJPbjCT3uD5NXvIJxBahzX4MWIN3X395gG28dx4ExHNZDSUw4hBLMfhez5jis&_nc_zt=23&_nc_ht=scontent.fkhi6-1.fna&_nc_gid=_mhvdSLdQtX3e_-Od4kNuw&_nc_ss=7b2a8&oh=00_AQRddhS2hQi5wLppbiGSzcCFjaWmqmFv_8sK7yqa43TDNQ&oe=6AF91C0D"
                   alt="STEAMSCAPE functional engineering and robotics model"
                   className="event-flow-parallax-img"
                 />

@@ -31,7 +31,7 @@ export const PrototypeQuestSection = () => {
               <div className="event-flow-parallax-box">
                 <img
                   ref={parallaxImgRef}
-                  src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&w=900&q=80"
+                  src="https://scontent.fkhi11-2.fna.fbcdn.net/v/t39.30808-6/488004398_1107128444768454_6096448369290316371_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_ohc=uMyNqv03Yj8Q7kNvwH5kDhP&_nc_oc=Adqo9uG4PgP3Rm_oMNrguNV1tK5F_JwYFKTQB7Vv8ItaBjK-_qFWjoDcaj0TUbDVL-U&_nc_zt=23&_nc_ht=scontent.fkhi11-2.fna&_nc_gid=I-oI44j1vkjjvoG-ji9-VQ&_nc_ss=7b2a8&oh=00_AQSVB7aePjp5u0Oeb42nyZm8JemltDuWBoSPgUBHkQZ90w&oe=6AF8FACD"
                   alt="Prototype Quest circuit fabrication and testing"
                   className="event-flow-parallax-img"
                 />

@@ -87,7 +87,7 @@ export const PhotographySection = () => {
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
           >
             <img
-              src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1600&q=80"
+              src="https://scontent.fkhi6-1.fna.fbcdn.net/v/t39.30808-6/487754320_1107128488101783_3125534135546658295_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=f727a1&_nc_ohc=f6mhCPwLgycQ7kNvwGEelBH&_nc_oc=Adrxd2CAk_kgFPPs-8m1B8a8mlCjQrg6D6hgdJXDDXCui_FRZwbc19zIny7sJsP45T8&_nc_zt=23&_nc_ht=scontent.fkhi6-1.fna&_nc_gid=wd3f0sc2FY5qaA7MLMmRrw&_nc_ss=7b2a8&oh=00_AQQ1mkItY93ffT44X6lcM5yxkmlZscMG69eZQRlb31kw9g&oe=6AF90260"
               alt="Photographer observing and capturing environmental and technological change"
               className="gallery-panorama-img"
             />
